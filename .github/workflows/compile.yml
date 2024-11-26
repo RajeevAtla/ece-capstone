@@ -23,6 +23,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install texlive-latex-recommended latexmk
+          tlmgr init-usertree
           tlmgr install enumitem
                     
       - name: Run LaTeX
