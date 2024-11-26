@@ -22,7 +22,7 @@ jobs:
       - name: Install Packages
         run: |
           sudo apt-get update
-          sudo apt-get install texlive-latex-recommended texlive-formats-extra texlive-fonts-extra latexmk
+          sudo apt-get install texlive-latex-recommended latexmk
                     
       - name: Run LaTeX
         run: |
