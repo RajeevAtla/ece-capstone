@@ -20,9 +20,9 @@ jobs:
           submodules: recursive
 
       - name: Install Packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install texlive-latex-extra latexmk -y
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: texlive-latex-extra latexmk
                     
       - name: Run LaTeX
         run: |
