@@ -22,7 +22,7 @@ jobs:
       - name: Install Packages
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: texlive-latex-extra latexmk
+          packages: texlive-full latexmk
           version: 1.0
                     
       - name: Run LaTeX
