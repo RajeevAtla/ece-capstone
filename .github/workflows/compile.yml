@@ -22,7 +22,7 @@ jobs:
       - name: Install Packages
         uses: zauguin/install-texlive@v3
         with:
-          packages: l3build latex latex-bin luatex latex-bin-dev latexmk enumitem geometry xcolor
+          packages: l3build latex latex-bin luatex latex-bin-dev latexmk enumitem geometry xcolor cm-super ec
                     
       - name: Run LaTeX
         run: |
