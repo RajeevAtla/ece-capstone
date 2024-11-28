@@ -19,10 +19,10 @@ jobs:
           fetch-depth: 0
           submodules: recursive
 
-      - name: Install Packages
-        uses: zauguin/install-texlive@v3
+      - name: Setup TeX Live
+        uses: teatimeguest/setup-texlive-action@v3
         with:
-          packages: l3build latex latex-bin luatex latex-bin-dev latexmk enumitem geometry xcolor cm-super ec
+          packages: scheme-full
                     
       - name: Run LaTeX
         run: |
