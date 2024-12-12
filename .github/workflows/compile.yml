@@ -29,6 +29,10 @@ jobs:
           cd 'Scope of Work'
           latexmk -f -pdf SOW.tex
           latexmk -c
+          cd ..
+          cd 'Conceptual Design'
+          latexmk -f -pdf CDR.tex
+          latexmk -c
       
       - name: Commit files
         run: |
