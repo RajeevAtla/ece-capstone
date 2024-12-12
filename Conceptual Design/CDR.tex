@@ -116,6 +116,60 @@ the system seeks to redefine parking management by providing users with highly a
 
 \section{PRELIMINARY DESIGN}
 
+
+For this project, 
+we plan to use either the You Only Look Once 
+(YOLO) 
+algorithm or the Region-based Convolutional Neural Network 
+(R-CNN) 
+algorithm for object detection. 
+YOLO is a real-time object detection algorithm known for its speed and efficiency. 
+Unlike traditional methods, 
+it treats detection as a single regression problem, 
+predicting bounding boxes and class probabilities in one forward pass. 
+By analyzing the entire image at once, 
+YOLO captures contextual information, 
+reducing false positives and processing images at high frame rates. 
+However, 
+it can struggle with small or closely packed objects due to its grid-based approach.
+
+R-CNN, by contrast, uses a two-stage process: 
+generating and classifying region proposals. 
+While accurate, 
+its initial implementation was slow because each region required individual processing. 
+Improvements like Fast R-CNN and Faster R-CNN introduced shared feature maps and an integrated Region Proposal Network (RPN), 
+enhancing efficiency while maintaining precision. 
+These models excel in detecting small or obscure objects but are generally slower than YOLO and more computationally intensive.
+
+Python as a programming language is the most viable option because of the vast amount of libraries that can be used for different tasks. 
+It also has a lot of compatibility with Raspberry Pi, 
+which we use as part of the image processing and identifying parking spaces. 
+For the image scanning in the machine learning model, 
+we plan to use the OpenCV library as it allows for detection and image capturing with quick response time. 
+TensorFlow is a library that allows for running the machine learning algorithm and models to classify parking spaces. 
+It also works with pre-trained models, 
+so it will be very useful for developing the backend.
+
+The Raspberry Pi board will be attached to the drone so we can upload the model to the drone for image processing and feed it into the mobile application. 
+Raspberry Pi is a useful computer that allows us to connect the machine learning model to the drone and allow the drone to perform tasks to get the information needed for compiling the data via the machine learning model. 
+The drone can autonomously navigate the parking lot to inspect parking spaces because the Raspberry Pi board will enable the drone to check its surroundings, 
+read the overall map of a given parking lot, 
+and reduce latency to allow for more efficient communication to the mobile app.
+
+The Mobile Application tech stack will consist of a frontend and a backend aspect. 
+For the backend services of the application, 
+using the Node.js framework allows us to perform tasks related to storing information within a database, 
+data processing, 
+and verification to ensure the information displayed in the application is correct. 
+For updating the information in real-time between the drone and the application, 
+using Socket.IO and its compatibility with Node.js and other libraries will make communication relayed back to the server more efficient to keep up with the speed of real-life scenarios involving parking on campus. 
+Finally, 
+the Flutter framework, 
+given its ability to only need one codebase for iOS and Android devices, 
+allows the app to function normally across all types of devices. 
+
+
+
 \subsection{Data Acquisition/Preparation}
 
 A diverse and robust dataset will form the foundation of this project. 
