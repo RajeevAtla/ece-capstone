@@ -39,7 +39,7 @@ jobs:
           git config user.email github-actions@github.com
           git config user.name github-actions
           git add .
-          git commit -m "compile SOW and add generated SOW.pdf files"
+          git commit -m "compile SOW, CDR and add generated SOW.pdf, CDR.pdf files"
 
       - name: Push
         uses: ad-m/github-push-action@master
