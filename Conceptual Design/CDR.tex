@@ -1,0 +1,230 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Smart Parking Lot Assist System\\
+{\footnotesize \textbf{Conceptual Design Report}}
+}
+
+\author{
+\textbf{Rajeev Atla, Parshva Mehta, Aman Patel, Abhiram Vemuri} \\
+Advisor: Kristin Dana\\
+Team Number: SP25-02 
+}
+
+\maketitle
+
+\begin{abstract}
+    With the growing complexity of American transport infrastructure and predominantly sustaining individual car commuting, large universities face ever-increasing problems addressing students’ and faculty’s parking needs. 
+    This project proposes an integrated approach using drone-based imaging, 
+    computer vision, 
+    and a simple mobile application to ease parking searches. 
+    Two essential components of this solution have been identified. 
+    First, 
+    a custom-configured drone flies a predetermined flight path over campus parking lots to obtain high-resolution delivery pictures. 
+    This image is processed through a computer vision model pre-trained to detect open parking spaces regardless of the lighting, 
+    angles, 
+    and weather conditions. 
+    The computer vision model output is transformed into a dataset identifying the available parking spots. 
+    Second, 
+    this dataset is smoothly integrated into a user-friendly mobile application with clarity and usability as its main focal points. 
+    This app embeds an adaptive interface with real-time maps, 
+    filters, 
+    and notifications to help users quickly find free spaces at their locations and optimize their parking decisions. 
+    In summary, 
+    this project heads toward data-driven transportation solutions, 
+    merging cutting-edge technology with usability to improve the daily commuting experience of countless people. 
+    And lastly, 
+    integrating the information with accessibility will pave the way toward more sustainable and efficient urban mobility patterns.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Computer Vision, Machine Learning, Mobile App Development
+\end{IEEEkeywords}
+
+\section{RECOGNIZE THE NEED}
+Past attempts to improve parking with automated valet systems have failed, 
+often because of high costs, 
+complicated logistics, 
+and issues with reliability. 
+In a lively campus setting, 
+these valet systems could be more feasible: 
+changing class schedules, 
+various modes of transportation, 
+and limited staff availability make it hard to provide reliable valet services. 
+As a result, 
+drivers waste precious time driving in circles in busy lots, 
+leading to congestion, 
+frustration, 
+and adverse environmental effects. 
+This project aims to address these issues by proposing a more accessible, 
+data-driven strategy to create efficient parking solutions that more effectively meet the needs of a growing and fast-paced academic community.
+
+\section{SCOPE OF THE PROJECT}
+
+This project aims to develop an innovative solution that leverages drone technology, 
+advanced computer vision, 
+and mobile applications to address the increasing parking challenges faced by large universities and similar environments. 
+This solution aims to streamline locating available parking spaces, 
+improve parking efficiency, 
+and enhance user convenience by updating real-time parking availability. 
+By utilizing drones for aerial surveillance and cutting-edge machine learning techniques, 
+the system seeks to redefine parking management by providing users with highly accurate and timely information.
+
+\begin{itemize}
+    \item \textbf{Dataset Research and Data Preprocessing}
+    \begin{itemize}
+        \item Dataset Research: Identify datasets with images in multiple weather and lighting conditions, preferably at the same altitude the drone will fly around.
+        \item Data Preprocessing: Enhance image quality and consistency using resizing, normalization, and augmentation.
+        \item Annotation: We will use annotating software such as labeling or train on a pre-annotated dataset.
+    \end{itemize}
+    \item Fine Tune Machine Learning/Computer Vision Model
+    \begin{itemize}
+        \item Train the model to detect occupied and empty parking spots and add functionality for handicapped spots.
+        \item Evaluate and refine the model based on precision, recall, and F1 score.
+    \end{itemize}
+    \item \textbf{Hardware}
+    \begin{itemize}
+        \item Raspberry Pi Deployment: Deploy the fine-tuned model on a Raspberry Pi equipped with a camera module.
+        \item Script Development: Create scripts to enable real-time image processing and classification.
+        \item Testing: Validate the system's functionality under varying weather and lighting conditions.
+        \item Design and fabricate a lightweight, secure mounting system to attach the Raspberry Pi and camera module to the drone.
+    \end{itemize}
+    \item \textbf{Drone Metrics}
+    \begin{itemize}
+        \item Battery Life Analysis: Measure and document the drone's battery performance during operation.
+        \item Regulatory Compliance: Obtain necessary permissions for drone operation.
+        \item System Reliability: Conduct field tests to ensure stability and accuracy.
+    \end{itemize}
+    \item \textbf{Predetermined Routing}
+    \begin{itemize}
+        \item Feasibility Study: Assess the viability of programming a predetermined flight path for parking lot coverage.
+        \item Navigation Programming: Utilize GPS and waypoints to automate the drone’s movement.
+        \item Obstacle Avoidance: Implement algorithms or use built-in drone capabilities to avoid obstacles.
+    \end{itemize}
+\end{itemize}
+
+
+\section{PRELIMINARY DESIGN}
+
+\subsection{Data Acquisition/Preparation}
+
+A diverse and robust dataset will form the foundation of this project. 
+The dataset will include parking lot images captured under varying conditions, 
+such as weather variations, 
+lighting levels, 
+and parking lot configurations. 
+Images will be sourced from public datasets and proprietary captures using drones to ensure relevance to the application. 
+The preprocessing phase will involve resizing, 
+normalization, 
+and augmentation to prepare the data for model training and ensure data quality and robustness. 
+These processes help simulate real-world scenarios and address potential image quality variations caused by environmental factors. 
+Annotation tools will meticulously label parking spaces as occupied or vacant. 
+Specific attention will be given to special categories like handicapped spots, 
+electric vehicle charging spaces, 
+and reserved parking areas, 
+ensuring the system’s utility across diverse user needs. 
+These steps will ensure the dataset’s quality and reliability for training, 
+setting the stage for robust model performance.
+
+\subsection{Model Development and Training}
+
+The project will leverage state-of-the-art computer vision models like YOLO or Mask R-CNN to address the task of parking space detection. 
+These models are known for their accuracy and speed, 
+making them ideal for real-time applications. 
+The chosen model will undergo customization and fine-tuning to align with the unique challenges of parking detection, 
+such as variations in car sizes, 
+overlapping boundaries, 
+and partial occlusions caused by objects or shadows. 
+This will allow us to successfully implement advanced image processing to identify parking spaces and determine whether they are either vacant or occupied under various weather conditions and obstacles that may interfere with the quality of the image itself. 
+Training will focus on optimizing detection accuracy while minimizing computational demands to ensure seamless integration into low-power edge devices like the Raspberry Pi. 
+Techniques like quantization and pruning will reduce model complexity without sacrificing performance. 
+Rigorous testing and validation will ensure the model’s robustness under diverse conditions and meet the required standards for real-time operation. 
+As stated earlier,
+we will use the datasets gathered in the data acquisition phase to test our machine learning algorithm to increase the accuracy of its overall functionality.
+
+\subsection{Hardware Testing and Integration}
+
+Selecting a suitable drone platform will be critical to the project’s success. 
+Key considerations include flight time, 
+payload capacity, 
+and maneuverability. 
+The drone will be equipped with a high-resolution camera capable of capturing detailed aerial images and a Raspberry Pi to process these images in real time. 
+A secure mounting system will be designed to ensure the stability of these components during flight. 
+The drone will feature a monitoring system to track battery health and overall operational stability to enhance reliability. 
+The testing phase will evaluate multiple aspects of the system, 
+including flight stability under varying wind conditions, 
+image quality under different lighting scenarios, 
+and model detection accuracy across diverse parking lot layouts. 
+Extensive field testing will help refine the integration and optimize the system for practical deployment.
+
+\subsection{Software Development}
+
+The software component will integrate advanced image processing, 
+machine learning, 
+and user-facing functionalities. 
+Captured images will undergo preprocessing steps such as noise reduction, 
+color correction, 
+and enhancement to ensure the highest possible input quality for the trained model. 
+The inference pipeline will leverage the trained model to identify and classify real-time parking spaces, 
+offering high accuracy and speed. 
+A robust data transmission protocol, 
+such as Wi-Fi or cellular communication, 
+will facilitate seamless information sharing with a central server or directly with a mobile application. 
+The mobile application will serve as the primary interface for end-users, 
+providing real-time parking availability information through interactive maps, 
+search functionality, 
+and real-time notifications. 
+Empty parking spaces will be highlighted on the interactive map for a given parking lot so that the user will receive this information. 
+Using the machine learning algorithm and the data gathered from the drone, 
+we can feed this into the backend of the mobile app function and apply a frontend user interface that connects with this information. 
+Emphasis will be placed on designing a user-friendly experience that accommodates various devices and user preferences, 
+ensuring wide adoption and usability.
+
+\subsection{Drone Flight Planning and Control}
+
+Efficient flight path planning will be a cornerstone of the project, 
+ensuring that the drone covers the entire parking area with minimal energy expenditure. 
+The drone will be equipped with autonomous navigation capabilities, 
+enabling it to follow pre-programmed routes while adapting to real-time commands from a remote operator when necessary. 
+Advanced obstacle avoidance techniques, 
+such as Light Detection and Ranging 
+(LiDAR) 
+or camera-based sensors, 
+will be implemented to ensure safe operation in dynamic environments. 
+Additionally, 
+fail-safe mechanisms will be integrated to handle unexpected scenarios, 
+such as sudden obstructions or system failures, 
+providing a controlled and safe landing. 
+These features will collectively enhance the reliability and efficiency of the drone's operation.
+
+\section{Future Considerations}
+
+The project envisions scalability and adaptability, 
+enabling deployment in diverse environments such as shopping malls, 
+stadiums, 
+airports, 
+and urban centers. 
+Future advancements include integrating smart city infrastructure to provide real-time traffic and parking analytics, 
+predictive modeling to forecast parking space availability based on historical data and current trends, 
+and developing multi-drone systems for monitoring larger areas simultaneously. 
+By combining cutting-edge technologies with user-centric design, 
+this project aims to revolutionize parking management, 
+offering an innovative and practical solution to modern challenges.
+
+\section*{Acknowledgment}
+
+We'd like to thank our advisor, Professor Dana, 
+as well as Professor Haghani for their support.
+
+
+\end{document}
