@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot Status</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        #parking-lot {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            background: url('parking_lot_image.jpg') no-repeat center;
+            background-size: cover;
+            margin: auto;
+        }
+        .spot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .vacant { background-color: green; }
+        .occupied { background-color: red; }
+    </style>
+</head>
+<body>
+
+<h2>Live Parking Lot Status</h2>
+<div id="parking-lot"></div>
+
+<script>
+    async function fetchParkingData() {
+        let response = await fetch('http://localhost:8000/get_parking');
+        let data = await response.json();
+
+        let container = document.getElementById('parking-lot');
+        container.innerHTML = ''; // Clear previous spots
+
+        data.forEach(spot => {
+            let div = document.createElement('div');
+            div.className = 'spot ' + spot.status;
+            div.style.left = spot.x + 'px';
+            div.style.top = spot.y + 'px';
+            div.title = `Spot ${spot.spot_number} - ${spot.status.toUpperCase()}`;
+            container.appendChild(div);
+        });
+    }
+
+    // Fetch data every 5 seconds
+    setInterval(fetchParkingData, 5000);
+    fetchParkingData();
+</script>
+
+</body>
+</html>
