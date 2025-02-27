@@ -1,7 +1,7 @@
 [
     {
         "spot_number": "A1",
-        "status": true
+        "status": false
     },
     {
         "spot_number": "A2",

@@ -5,11 +5,9 @@ from sqlalchemy.orm import sessionmaker, declarative_base, Session
 import json
 import os
 
-# Database Configuration
 DATABASE_URL = "postgresql://parshvamehta:parshva123@localhost/parking_db"
 engine = create_engine(DATABASE_URL)
 
-# Function to initialize the database
 def initialize_db():
     with engine.connect() as conn:
         with open("database.sql", "r") as file:
@@ -17,7 +15,6 @@ def initialize_db():
         conn.execute(text(sql_script))
         conn.commit()
 
-# Session Management
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 Base = declarative_base()
 
@@ -32,10 +29,9 @@ class ParkingSpot(Base):
     status = Column(Boolean, default=True)  # True = Available, False = Occupied
     last_updated = Column(TIMESTAMP, default=func.now())
 
-# Create Tables
 Base.metadata.create_all(bind=engine)
 
-# Function to seed the database with initial data
+# Test Data
 def seed_database():
     session = SessionLocal()
     
@@ -49,19 +45,16 @@ def seed_database():
     
     session.close()
 
-# Initialize DB and seed it with test data
+# Call Init functions
 initialize_db()
 seed_database()
 
-# FastAPI App
 app = FastAPI()
 
-# Pydantic Model for Updating Parking Spots
 class ParkingUpdate(BaseModel):
     spot_number: str
     status: bool
 
-# Function to get a database session
 def get_db():
     db = SessionLocal()
     try:
@@ -69,7 +62,6 @@ def get_db():
     finally:
         db.close()
 
-# Function to update the JSON file
 def update_json_file(spot_number: str, new_status: bool):
     file_path = "ml_output.json"
 
