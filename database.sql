@@ -1,4 +1,4 @@
-CREATE TABLE parking_spots (
+CREATE TABLE IF NOT EXISTS parking_spots (
     id SERIAL PRIMARY KEY,
     spot_number VARCHAR(10) UNIQUE NOT NULL,
     x FLOAT NOT NULL,
@@ -6,4 +6,3 @@ CREATE TABLE parking_spots (
     status BOOLEAN DEFAULT TRUE,  -- TRUE = Available, FALSE = Occupied
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-

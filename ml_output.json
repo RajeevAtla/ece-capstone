@@ -1,0 +1,10 @@
+[
+    {
+        "spot_number": "A1",
+        "status": true
+    },
+    {
+        "spot_number": "A2",
+        "status": false
+    }
+]
