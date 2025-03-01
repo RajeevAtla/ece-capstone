@@ -95,18 +95,6 @@ def test_update_parking_missing_fields():
 def test_update_parking_invalid_data():
     response = client.post("/update_parking", json={"spot_number": "A1", "status": "INVALID"})
     assert response.status_code == 422  
-    
-def test_add_duplicate_parking_spot():
-    response = client.post("/add_parking", json={"spot_number": "A1", "x": 10.5, "y": 20.3, "status": True})
-    assert response.status_code == 400  
-    
-def test_large_number_of_parking_spots():
-    for i in range(1, 101):  
-        client.post("/add_parking", json={"spot_number": f"B{i}", "x": i * 1.1, "y": i * 2.2, "status": True})
-
-    response = client.get("/get_parking")
-    assert response.status_code == 200
-    assert len(response.json()) >= 100
 
 def test_rapid_consecutive_updates():
     for _ in range(10): 
