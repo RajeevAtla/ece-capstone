@@ -1,4 +1,4 @@
-train: ./images  # Training data path
-val: ./images  # No validation, but YOLO requires a path
-nc: 2  # Number of classes (Car and Empty Space)
-names: ["car", "empty"]
+train: dataset/train
+val: dataset/val
+nc: 2
+names: ['car', 'empty']
