@@ -4,5 +4,4 @@ CREATE TABLE IF NOT EXISTS parking_spots (
     x FLOAT NOT NULL,
     y FLOAT NOT NULL,
     status BOOLEAN DEFAULT TRUE,  -- TRUE = Available, FALSE = Occupied
-    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+)
