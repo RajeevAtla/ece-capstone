@@ -1,0 +1,101 @@
+/* Header Styling */
+header {
+    background-color: #F1F1F1;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 3px solid #990000;
+}
+
+/* Header Content */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Logo Styling */
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+/* Title Styling */
+.title {
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.title h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #990000;
+    margin: 0;
+}
+
+.title h2 {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #990000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: none;
+    outline: none;
+    width: 150px;
+}
+
+.search-bar button {
+    background-color: #990000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #990000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #F1F1F1;
+}

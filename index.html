@@ -3,55 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parking Lot Status</title>
+    <title>Rutgers Parking Updates</title>
+    
+    <!-- Google Font for Modern Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
     <style>
-        body { text-align: center; font-family: Arial, sans-serif; }
-        #parking-lot {
-            position: relative;
-            width: 800px;
-            height: 500px;
-            background: url('parking_lot_image.jpg') no-repeat center;
-            background-size: cover;
+        /* General Page Styling */
+        body {
+            background-color: #D32F2F; /* Softer Red */
+            color: black;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header, footer {
+            background-color: #990000;
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
             margin: auto;
         }
-        .spot {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            border: 2px solid white;
+
+        /* Container for Parking Lot */
+        .lot-container {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            width: fit-content;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .vacant { background-color: green; }
-        .occupied { background-color: red; }
+
+        .lot-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* Parking Lot Tables */
+        .parking-lot-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .lot {
+            border: 2px solid black;
+            padding: 15px;
+            background-color: #F8F9FA;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .lot:hover {
+            transform: scale(1.03);
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        td {
+            width: 60px;
+            height: 35px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: white;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        td:hover {
+            background-color: #eee;
+        }
+
+        .vacant {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+
+        .occupied {
+            background-color: #E53935; /* Red */
+            color: white;
+        }
+
+        .handicap {
+            background-color: #1E88E5; /* Blue */
+            color: white;
+        }
+
+        .not-parking {
+            background-color: black;
+            color: white;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
 
-<h2>Live Parking Lot Status</h2>
-<div id="parking-lot"></div>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Rutgers_University_seal.svg/1024px-Rutgers_University_seal.svg.png" 
+                     alt="Rutgers Logo">
+            </div>
+            <div class="title">
+                <h1>Rutgers University</h1>
+                <h2>Institutional Planning and Operations</h2>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>🔍</button>
+            </div>
+        </div>
+    
+        <nav>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Departments</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">IP&O Staff</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <main>
+        <h2>Busch Campus</h2>
 
-<script>
-    async function fetchParkingData() {
-        let response = await fetch('http://localhost:8000/get_parking');
-        let data = await response.json();
+        <div class="lot-container" id="ece-lot">
+            <h2>Electrical and Computer Engineering Parking Lot 60A</h2>
+            <div class="parking-lot-container">
 
-        let container = document.getElementById('parking-lot');
-        container.innerHTML = ''; // Clear previous spots
+                <!-- Lot A (34x1) -->
+                <div class="lot">
+                    <h3>Lot A</h3>
+                    <table>
+                        <tbody id="lot-A">
+                            <script>
+                                let lotA = "";
+                                for (let i = 1; i <= 34; i++) {
+                                    if (i === 14 || i === 30) {
+                                        lotA += `<tr><td class="not-parking">X</td></tr>`;
+                                    } else if (i >= 31) {
+                                        lotA += `<tr><td class="handicap">A-${i}</td></tr>`;
+                                    } else {
+                                        lotA += `<tr><td class="vacant">A-${i}</td></tr>`;
+                                    }
+                                }
+                                document.write(lotA);
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
 
-        data.forEach(spot => {
-            let div = document.createElement('div');
-            div.className = 'spot ' + spot.status;
-            div.style.left = spot.x + 'px';
-            div.style.top = spot.y + 'px';
-            div.title = `Spot ${spot.spot_number} - ${spot.status.toUpperCase()}`;
-            container.appendChild(div);
+                <!-- Lot B (33x2) -->
+                <div class="lot">
+                    <h3>Lot B</h3>
+                    <table>
+                        <tbody id="lot-B">
+                            <script>
+                                let lotB = "";
+                                for (let i = 1; i <= 33; i++) {
+                                    lotB += `<tr>
+                                        <td class="vacant">BL-${i}</td>
+                                        <td class="vacant">BR-${i}</td>
+                                    </tr>`;
+                                }
+                                document.write(lotB);
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Lot C (31x2) -->
+                <div class="lot">
+                    <h3>Lot C</h3>
+                    <table>
+                        <tbody id="lot-C">
+                            <script>
+                                let lotC = "<tr><td class='vacant'>CL-1</td><td class='not-parking'>X</td></tr>";
+                                for (let i = 2; i <= 31; i++) {
+                                    lotC += `<tr>
+                                        <td class="vacant">CL-${i}</td>
+                                        <td class="vacant">CR-${i - 1}</td>
+                                    </tr>`;
+                                }
+                                document.write(lotC);
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Lot D (31x1) -->
+                <div class="lot">
+                    <h3>Lot D</h3>
+                    <table>
+                        <tbody id="lot-D">
+                            <script>
+                                let lotD = "";
+                                for (let i = 1; i <= 31; i++) {
+                                    if ([25, 26, 28, 30].includes(i)) {
+                                        lotD += `<tr><td class="not-parking">X</td></tr>`;
+                                    } else if (i >= 25) {
+                                        lotD += `<tr><td class="handicap">D-${i}</td></tr>`;
+                                    } else {
+                                        lotD += `<tr><td class="vacant">D-${i}</td></tr>`;
+                                    }
+                                }
+                                document.write(lotD);
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rutgers University. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth Fade-in on Scroll
+        document.addEventListener("scroll", function() {
+            let element = document.getElementById("ece-lot");
+            let position = element.getBoundingClientRect().top;
+            let windowHeight = window.innerHeight;
+
+            if (position < windowHeight - 50) {
+                element.classList.add("visible");
+            }
         });
-    }
-
-    // Fetch data every 5 seconds
-    setInterval(fetchParkingData, 5000);
-    fetchParkingData();
-</script>
+    </script>
 
 </body>
 </html>
