@@ -7,7 +7,7 @@ print("🚀 Script started successfully!")
 
 # Load the trained YOLO model
 model = YOLO("../best.pt")
-print("✅ Model loaded successfully!")
+print("Model loaded successfully!")
 
 # Paths
 test_images_dir = "../images"
@@ -23,18 +23,18 @@ print(f"Found {len(image_files)} test images in {test_images_dir}")
 
 def process_image(image_path):
     """Runs YOLO model on a single image and returns the processed image."""
-    print(f"🔍 Loading image: {image_path}")
+    print(f"Loading image: {image_path}")
     img = cv2.imread(image_path)
 
     if img is None:
-        print(f"❌ Error loading image: {image_path}")
+        print(f"Error loading image: {image_path}")
         return None
 
-    print(f"✅ Successfully loaded {image_path}")
+    print(f"Successfully loaded {image_path}")
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     results = model(img)  # Run YOLO on the image
-    print("✅ YOLO inference ran successfully!")
+    print("YOLO inference ran successfully!")
 
     for result in results:
         for box in result.boxes:
@@ -52,22 +52,22 @@ def process_image(image_path):
 
 # Process each test image
 for image_file in image_files:
-    print(f"📷 Processing: {image_file}")
+    print(f"Processing: {image_file}")
     image_path = os.path.join(test_images_dir, image_file)
 
     processed_img = process_image(image_path)
 
     if processed_img is None:
-        print(f"⚠️ Skipping {image_file}, could not process.")
+        print(f"Skipping {image_file}, could not process.")
         continue
 
     # Save the output image
     output_path = os.path.join(output_dir, image_file)
-    print(f"📂 Attempting to save: {output_path}")
+    print(f"Attempting to save: {output_path}")
     
     success = cv2.imwrite(output_path, cv2.cvtColor(processed_img, cv2.COLOR_RGB2BGR))
     
     if success:
-        print(f"✅ Saved image: {output_path}")
+        print(f"Saved image: {output_path}")
     else:
-        print(f"❌ Failed to save: {output_path}")
+        print(f"Failed to save: {output_path}")
