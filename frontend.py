@@ -50,6 +50,18 @@ html_template = """
         .accordion-content.active {
             display: block;
         }
+        .update-btn {
+            background-color: #990000;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .update-btn:hover {
+            background-color: #750000;
+        }
         footer {
             background-color: #990000;
             padding: 1rem;
@@ -61,6 +73,28 @@ html_template = """
             const content = document.getElementById(id);
             content.classList.toggle('active');
         }
+        
+        function updateParkingSpots() {
+            fetch("http://127.0.0.1:8000/get_parking")  // FastAPI endpoint
+            .then(response => response.json())
+            .then(data => {
+                // Loop through the returned parking spots and update the UI
+                data.spots.forEach(spot => {
+                    let spotElement = document.getElementById(`lot-${spot.spot_number}`);
+                    if (spotElement) {
+                        spotElement.textContent = spot.status;
+                    }
+                });
+
+                // Update the total parking spots count
+                document.getElementById("total-spots").textContent = `Total Spots: ${data.total_spots}`;
+            })
+            .catch(error => {
+                console.error("Error fetching parking data:", error);
+                alert("Failed to fetch parking data.");
+            });
+        }
+        
     </script>
 </head>
 <body>
@@ -75,33 +109,58 @@ html_template = """
 
         <div class="section">
             <h2>Lot Availability</h2>
+            <button class="update-btn" onclick="updateParkingSpots()">Update All</button>
+            <p id="total-spots">Total Spots: --</p> <!-- Placeholder for total count -->
             <div class="accordion">
+                <!-- Busch Campus -->
                 <div class="accordion-item">
                     <div class="accordion-title" onclick="toggleContent('busch-content')">Busch Campus</div>
                     <div class="accordion-content" id="busch-content">
-                        <p>Lot 59: 20 spaces available</p>
-                        <p>Lot 67: 10 spaces available</p>
+                        <p>Lot 59: <span id="lot-59">20</span> spaces available 
+                            <button class="update-btn">Update</button>
+                        </p>
+                        <p>Lot 67: <span id="lot-67">10</span> spaces available 
+                            <button class="update-btn">Update</button>
+                        </p>
                     </div>
                 </div>
+
+                <!-- Livingston Campus -->
                 <div class="accordion-item">
                     <div class="accordion-title" onclick="toggleContent('livingston-content')">Livingston Campus</div>
                     <div class="accordion-content" id="livingston-content">
-                        <p>Lot 105: 15 spaces available</p>
-                        <p>Lot 112: 5 spaces available</p>
+                        <p>Lot 105: <span id="lot-105">15</span> spaces available 
+                            <button class="update-btn">Update</button>
+                        </p>
+                        <p>Lot 112: <span id="lot-112">5</span> spaces available 
+                            <button class="update-btn">Update</button>
+                        </p>
                     </div>
                 </div>
+
+                <!-- College Avenue Campus -->
                 <div class="accordion-item">
                     <div class="accordion-title" onclick="toggleContent('college-ave-content')">College Avenue Campus</div>
                     <div class="accordion-content" id="college-ave-content">
-                        <p>Lot 30: Full</p>
-                        <p>Lot 26: 8 spaces available</p>
+                        <p>Lot 30: <span id="lot-30">Full</span> 
+                            <button class="update-btn">Update</button>
+                        </p>
+                        <p>Lot 26: <span id="lot-26">8</span> spaces available 
+                            <button class="update-btn">Update</button>
+                        </p>
                     </div>
                 </div>
+
+                <!-- Cook/Douglass Campus -->
                 <div class="accordion-item">
                     <div class="accordion-title" onclick="toggleContent('cook-douglass-content')">Cook/Douglass Campus</div>
                     <div class="accordion-content" id="cook-douglass-content">
-                        <p>Lot 70: 12 spaces available</p>
-                        <p>Lot 78: Full</p>
+                        <p>Lot 70: <span id="lot-70">12</span> spaces available 
+                            <button class="update-btn">Update</button>
+                        </p>
+                        <p>Lot 78: <span id="lot-78">Full</span> 
+                            <button class="update-btn">Update</button>
+                        </p>
                     </div>
                 </div>
             </div>

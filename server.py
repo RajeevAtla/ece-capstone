@@ -4,6 +4,8 @@ from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean, T
 from sqlalchemy.orm import sessionmaker, declarative_base, Session
 import json
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
 
 DATABASE_URL = "postgresql://parshvamehta:parshva123@localhost/parking_db"
 engine = create_engine(DATABASE_URL)
@@ -31,25 +33,19 @@ class ParkingSpot(Base):
 
 Base.metadata.create_all(bind=engine)
 
-# Test Data
-def seed_database():
-    session = SessionLocal()
-    
-    if session.query(ParkingSpot).count() == 0:
-        spots = [
-            ParkingSpot(spot_number="A1", x=10.5, y=20.3, status=True),
-            ParkingSpot(spot_number="A2", x=15.2, y=25.1, status=False)
-        ]
-        session.add_all(spots)
-        session.commit()
-    
-    session.close()
 
 # Call Init functions
 initialize_db()
-seed_database()
+
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://127.0.0.1:5000"],  # Flask server address
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class ParkingUpdate(BaseModel):
     spot_number: str
@@ -91,7 +87,20 @@ def update_json_file(spot_number: str, new_status: bool):
 @app.get("/get_parking")
 def get_parking(db: Session = Depends(get_db)):
     spots = db.query(ParkingSpot).all()
-    return [{"spot_number": s.spot_number, "x": s.x, "y": s.y, "status": "vacant" if s.status else "occupied"} for s in spots]
+    total_spots = len(spots)  # Get total number of spots
+
+    return {
+        "total_spots": total_spots,
+        "spots": [
+            {
+                "spot_number": s.spot_number,
+                "x": s.x,
+                "y": s.y,
+                "status": "vacant" if s.status else "occupied"
+            } 
+            for s in spots
+        ]
+    }
 
 # API to Update Parking Spot Status
 @app.post("/update_parking")
@@ -109,4 +118,4 @@ def update_parking(data: ParkingUpdate, db: Session = Depends(get_db)):
     
     return {"message": f"Spot {data.spot_number} updated successfully"}
 
-# uvicorn server:app --reload --host 0.0.0.0 --port 8000
+# uvicorn server:app --reload --host 127.0.0.1 --port 8000

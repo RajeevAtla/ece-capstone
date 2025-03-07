@@ -13,9 +13,18 @@ def reset_database():
     db: Session = SessionLocal()
     db.query(ParkingSpot).delete()
 
+    # Test Data
     test_spots = [
         ParkingSpot(spot_number="A1", x=10.5, y=20.3, status=True),
-        ParkingSpot(spot_number="A2", x=15.2, y=25.1, status=False)
+        ParkingSpot(spot_number="A2", x=15.2, y=25.1, status=False),
+        ParkingSpot(spot_number="B1", x=12.8, y=22.7, status=True),
+        ParkingSpot(spot_number="B2", x=18.4, y=30.2, status=False),
+        ParkingSpot(spot_number="C1", x=14.6, y=28.9, status=True),
+        ParkingSpot(spot_number="C2", x=19.1, y=35.5, status=False),
+        ParkingSpot(spot_number="D1", x=11.3, y=24.6, status=True),
+        ParkingSpot(spot_number="D2", x=16.7, y=27.4, status=False),
+        ParkingSpot(spot_number="E1", x=13.9, y=26.8, status=True),
+        ParkingSpot(spot_number="E2", x=20.0, y=32.1, status=False)
     ]
 
     db.add_all(test_spots)
