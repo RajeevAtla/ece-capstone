@@ -10,7 +10,7 @@ model = YOLO("../best.pt")
 print("Model loaded successfully!")
 
 # Paths
-test_images_dir = "../images"
+test_images_dir = "../images/ece images"
 output_dir = "./output_images"
 os.makedirs(output_dir, exist_ok=True)
 
