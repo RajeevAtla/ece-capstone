@@ -38,6 +38,7 @@ def main():
         cv2.imshow("Parking Spot Detection", processed_frame)
         
         if cv2.waitKey(1) & 0xFF == ord('q'):
+            print("Process stopped: \"q\" pressed")
             break
     
     cap.release()
