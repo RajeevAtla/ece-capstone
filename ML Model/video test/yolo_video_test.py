@@ -22,9 +22,10 @@ def process_frame(frame):
     return frame
 
 def main():
-    """Main function to read from a video file, run detection, and save output."""
-    video_path = "videoplayback.mp4"  # Change this to your input video file
+    """Main function to read from a video file, run detection every N frames, and save output."""
+    video_path = "videoplayback.mp4"
     output_path = "output_video.avi"  # Output video file
+    process_interval = 5  # Process every N frames
 
     cap = cv2.VideoCapture(video_path)  # Load video file
     
@@ -41,24 +42,31 @@ def main():
     # Initialize video writer
     out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
 
+    frame_count = 0
+    last_processed_frame = None  # Store the last processed frame
+
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
             print("End of video or failed to read frame.")
             break
         
-        processed_frame = process_frame(frame)
+        # Process every 'process_interval' frames
+        if frame_count % process_interval == 0:
+            last_processed_frame = process_frame(frame)
         
-        # Save processed frame to output video
-        out.write(processed_frame)
+        # Use the last processed frame if not processing this one
+        out.write(last_processed_frame if last_processed_frame is not None else frame)
 
         # Display processed frame
-        cv2.imshow("Parking Spot Detection - Video Test", processed_frame)
+        cv2.imshow("Parking Spot Detection - Video Test", last_processed_frame)
         
         if cv2.waitKey(1) & 0xFF == ord('q'):
             print("Process stopped: \"q\" pressed")
             break
-    
+
+        frame_count += 1  # Increment frame counter
+
     cap.release()
     out.release()
     cv2.destroyAllWindows()
