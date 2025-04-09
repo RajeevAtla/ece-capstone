@@ -5,6 +5,8 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
+\usepackage{listings}
+
 \usepackage{textcomp}
 \usepackage{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -149,7 +151,7 @@ which ultimately limited the performance and scope of our system.
 Initially, 
 the project was designed to utilize an aerial camera perspective, 
 similar to the dataset images 
-(see Figure 4), 
+(see Figure \ref{fig:fig4}), 
 in order to accurately capture parking lines and define bounding boxes around each space. 
 However, 
 due to regulatory constraints from Rutgers University and the State of New Jersey, 
@@ -215,11 +217,11 @@ These plots provide insight into the model’s convergence and potential overfit
 
 \subsection{Training Loss}
 
-Figure 1 illustrates the progression of the training loss throughout the training process. 
-During the early epochs, 
+Figure \ref{fig:fig1} illustrates the progression of the training loss throughout the training process. 
+During the early epochs,
 the training loss exhibits fluctuations as the optimizer begins to interact with the training data. 
 These fluctuations indicate the optimization process adjusting to the model’s parameters and gradually improving the model's ability to minimize the loss. 
-In the subsequent epochs, 
+In the subsequent epochs,
 the loss shows a steady decrease, 
 demonstrating that the model is learning from the data and the optimizer is refining its parameters effectively.
 
@@ -246,15 +248,19 @@ each fine-tuning cycle results in the loss ultimately decreasing to a lower valu
 demonstrating effective model refinement. 
 The general trend of the training loss decreasing over time and ultimately plateauing reinforces the model's capacity to converge toward an optimal solution.
 
-[Figure 1: Training Loss Curve]
-
-Figure 1 Caption: 
-Notice how the training loss generally decreases throughout the training and plateaus after 750-800 epochs at a value of 0.6. 
-The ''spikes'' in the beginning and throughout the plot represent fine-tuning.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{Figure_1.png}
+    \caption{
+        Notice how the training loss generally decreases throughout the training and plateaus after 750-800 epochs at a value of 0.6. 
+        The ''spikes'' in the beginning and throughout the plot represent fine-tuning.
+    }
+    \label{fig:fig1}
+\end{figure}
 
 \subsection{Validation Loss}
 
-Figure 2 shows the progression of the validation loss throughout the training process. 
+Figure \ref{fig:fig2} shows the progression of the validation loss throughout the training process. 
 Initially, 
 the validation loss decreases steadily, 
 mirroring the trend observed in the training loss. 
@@ -286,19 +292,25 @@ the training was halted at this point to avoid overfitting and ensure that the m
 The validation loss plot highlights the effectiveness of this strategy, 
 demonstrating that the model achieved its optimal performance without unnecessary overtraining.
 
-[Figure 2: Validation Loss Curve]
 
-Figure 2 Caption: 
-Notice how the validation loss generally decreases and plateaus after 750-800 epochs. 
-When training the model, 
-the stopping point was when the validation loss plateaus. 
-The spikes are present in this plot as well.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{Figure_2.png}
+    \caption{
+        Notice how the validation loss generally decreases and plateaus after 750-800 epochs. 
+        When training the model, 
+        the stopping point was when the validation loss plateaus. 
+        The spikes are present in this plot as well.    
+    }
+    \label{fig:fig2}
+\end{figure}
 
 \subsection{Evaluation}
 
 [5] https://docs.ultralytics.com/guides/yolo-performance-metrics/
 
-Figure 3 presents the evolution of the four evaluation metrics: 
+Figure \ref{fig:fig3} presents the evolution of the four evaluation metrics: 
 Precision (P), 
 Recall (R), 
 mAP50, 
@@ -331,19 +343,23 @@ The improvements in precision and recall suggest that the model is not only beco
 The increasing mAP scores further reinforce this, 
 indicating that the model is refining its detection capabilities and performing well across various detection scenarios.
 
-[Figure 3: Evaluation Metrics]
-
-Figure 3 Caption:
-The values of the four evaluation metrics 
-(Precision, Recall, mAP50, and mAP50-95) 
-improve steadily throughout the training process, 
-indicating that the model's performance enhances as training progresses. 
-The spikes in the plot reflect periods of fine-tuning and adjustments to the model’s weights.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{Figure_3.png}
+    \caption{
+        The values of the four evaluation metrics 
+        (Precision, Recall, mAP50, and mAP50-95) 
+        improve steadily throughout the training process, 
+        indicating that the model's performance enhances as training progresses. 
+        The spikes in the plot reflect periods of fine-tuning and adjustments to the model’s weights.   
+    }
+    \label{fig:fig3}
+\end{figure}
 
 
 \subsection{Test Examples}
 
-In Figure 4, 
+In Figure \ref{fig:fig4}, 
 a test image from the dataset is presented with bounding boxes overlaid to indicate detected objects. 
 Empty parking spaces are highlighted with green bounding boxes, 
 while occupied spaces are marked with red. 
@@ -351,12 +367,12 @@ The YOLOv11 model successfully identifies and classifies parking spaces in this 
 demonstrating the model's ability to classify spaces in relative proximity.
 
 However, 
-as seen in Figure 5, 
+as seen in Figure \ref{fig:fig5}, 
 the model encounters challenges when objects are further away, 
 particularly with identifying vehicles and parking spaces at a distance. 
 This limitation arises from the model's struggle to accurately detect and classify objects farther from the camera, 
 likely due to the reduced resolution of distant objects and the difficulty distinguishing fine details at greater distances. 
-The frame shown in Figure 5 is from a test video, 
+The frame shown in Figure \ref{fig:fig5} is from a test video, 
 where this issue impacts the model’s performance.
 
 The difficulty in detecting distant objects suggests that parking lots with large or irregular layouts will require multiple cameras to ensure complete coverage. 
@@ -367,15 +383,26 @@ both near and far,
 are adequately monitored and classified. 
 This approach will improve the system's overall accuracy and ensure more reliable performance across a broader area.
 
-[Figure 4: Parking Lot Pic 1]
-Figure 4 Caption: 
-Observe that the empty parking spaces are marked with green bounding boxes while occupied spaces are marked with red bounding boxes. 
-The YOLOv11 model correctly identifies and classifies spaces in the test data.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.065]{Figure_4.JPG}
+    \caption{
+        Observe that the empty parking spaces are marked with green bounding boxes while occupied spaces are marked with red bounding boxes. 
+        The YOLOv11 model correctly identifies and classifies spaces in the test data.
+    }
+    \label{fig:fig4}
+\end{figure}
 
-[Figure 5: Parking Lot Pic 2]
-Figure 5 Caption: Observe that the model struggles to identify vehicles and spaces at a distance. 
-Most lots will need more than one camera in order to cover every space. 
-This is a frame taken from a test video.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{Figure_5.JPG}
+    \caption{
+        Observe that the model struggles to identify vehicles and spaces at a distance. 
+        Most lots will need more than one camera in order to cover every space. 
+        This is a frame taken from a test video.   
+    }
+    \label{fig:fig5}
+\end{figure}
 
 \section{Cost/Sustainability analysis}
 
@@ -542,5 +569,8 @@ this system presents a forward-thinking,
 practical solution to the persistent challenges of urban parking, 
 paving the way for smarter, more efficient cities.
 
+
+
+\section{Appendix - Code}
 
 \end{document}

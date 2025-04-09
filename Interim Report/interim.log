@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.24)  8 APR 2025 19:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.24)  8 APR 2025 22:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -236,6 +236,34 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@height=\dimen173
 \Gin@req@width=\dimen174
 )
+(c:/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count285
+\lst@gtempboxa=\box55
+\lst@token=\toks24
+\lst@length=\count286
+\lst@currlwidth=\dimen175
+\lst@column=\count287
+\lst@pos=\count288
+\lst@lostspace=\dimen176
+\lst@width=\dimen177
+\lst@newlines=\count289
+\lst@lineno=\count290
+\lst@maxwidth=\dimen178
+
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
+)
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+\c@lstnumber=\count291
+\lst@skipnumbers=\count292
+\lst@framebox=\box56
+)
+(c:/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/02/21 1.10 listings configuration
+))
+Package: listings 2024/02/21 1.10 (Carsten Heinz)
+
 (c:/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
@@ -260,41 +288,41 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 )
 (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count285
-\l__pdf_internal_box=\box55
+\l__color_backend_stack_int=\count293
+\l__pdf_internal_box=\box57
 )
 (./interim.aux)
 \openout1 = `interim.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 -- Lines per column: 56 (exact).
 (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count286
-\scratchdimen=\dimen175
-\scratchbox=\box56
-\nofMPsegments=\count287
-\nofMParguments=\count288
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count289
-\MPscratchDim=\dimen176
-\MPnumerator=\count290
-\makeMPintoPDFobject=\count291
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count294
+\scratchdimen=\dimen179
+\scratchbox=\box58
+\nofMPsegments=\count295
+\nofMParguments=\count296
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count297
+\MPscratchDim=\dimen180
+\MPnumerator=\count298
+\makeMPintoPDFobject=\count299
+\everyMPtoPDFconversion=\toks26
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -303,26 +331,85 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
-)) [1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/
-2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
+))
+\c@lstlisting=\count300
+ [1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/20
+23/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 299--300
+<Figure_1.png, id=12, 1387.584pt x 704.6325pt>
+File: Figure_1.png Graphic file (type png)
+<use Figure_1.png>
+Package pdftex.def Info: Figure_1.png  used on input line 253.
+(pdftex.def)             Requested size: 277.51189pt x 140.924pt.
+
+Overfull \hbox (25.51189pt too wide) in paragraph at lines 253--257
+ [][] 
+ []
+
+<Figure_2.png, id=14, 1387.584pt x 704.6325pt>
+File: Figure_2.png Graphic file (type png)
+<use Figure_2.png>
+Package pdftex.def Info: Figure_2.png  used on input line 299.
+(pdftex.def)             Requested size: 277.51189pt x 140.924pt.
+
+Overfull \hbox (25.51189pt too wide) in paragraph at lines 299--305
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 []\OT1/ptm/m/n/10 [5] https://docs.ultralytics.com/guides/yolo-performance-
  []
 
-[3]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-84.
- (c:/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+[3 <./Figure_1.png> <./Figure_2.png>]
+<Figure_3.png, id=20, 1387.584pt x 704.6325pt>
+File: Figure_3.png Graphic file (type png)
+<use Figure_3.png>
+Package pdftex.def Info: Figure_3.png  used on input line 348.
+(pdftex.def)             Requested size: 277.51189pt x 140.924pt.
+
+Overfull \hbox (25.51189pt too wide) in paragraph at lines 348--355
+ [][] 
+ []
+
+<Figure_4.JPG, id=21, 4015.0pt x 3011.25pt>
+File: Figure_4.JPG Graphic file (type jpg)
+<use Figure_4.JPG>
+Package pdftex.def Info: Figure_4.JPG  used on input line 388.
+(pdftex.def)             Requested size: 260.98416pt x 195.73811pt.
+
+Overfull \hbox (8.98416pt too wide) in paragraph at lines 388--392
+ [][] 
+ []
+
+<Figure_5.JPG, id=22, 653.44125pt x 637.38126pt>
+File: Figure_5.JPG Graphic file (type jpg)
+<use Figure_5.JPG>
+Package pdftex.def Info: Figure_5.JPG  used on input line 398.
+(pdftex.def)             Requested size: 261.37187pt x 254.94798pt.
+
+Overfull \hbox (9.37187pt too wide) in paragraph at lines 398--403
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
+11.
+(c:/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Underfull \hbox (badness 1975) in paragraph at lines 449--463
+) [4 <./Figure_3.png> <./Figure_4.JPG>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 1975) in paragraph at lines 476--490
 []\OT1/ptm/m/n/10 Recent ad-vance-ments have shown that ef-fi-cient, low-
  []
 
-[4]
+[5 <./Figure_5.jpg>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -334,27 +421,29 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5] (./interim.aux)
+[6
+
+] (./interim.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4120 strings out of 474137
- 63705 string characters out of 5748511
+ 5534 strings out of 474137
+ 84356 string characters out of 5748511
  1943190 words of memory out of 5000000
- 26444 multiletter control sequences out of 15000+600000
+ 27847 multiletter control sequences out of 15000+600000
  587761 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,65p,230b,276s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,8n,65p,441b,276s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2023
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on interim.pdf (5 pages, 66085 bytes).
+Output written on interim.pdf (6 pages, 4243115 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
