@@ -1,8 +1,10 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-\usepackage{cite}
+\usepackage[style=numeric]{biblatex}
+\addbibresource{citations.bib}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{minted}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{listings}
@@ -86,9 +88,7 @@ setting the stage for robust model performance.
 
 \subsection{ML Model}
 
-[4] https://docs.ultralytics.com/models/yolo11/
-
-The project will leverage the YOLOv11 computer vision algorithm [4] to address the task of parking space detection. 
+The project will leverage the YOLOv11 computer vision algorithm \cite{yolo11_ultralytics} to address the task of parking space detection. 
 Known for its accuracy and speed, 
 YOLO is well-suited for real-time applications.
 The model will undergo customization and fine-tuning to align with the unique challenges of parking detection, 
@@ -308,8 +308,6 @@ demonstrating that the model achieved its optimal performance without unnecessar
 
 \subsection{Evaluation}
 
-[5] https://docs.ultralytics.com/guides/yolo-performance-metrics/
-
 Figure \ref{fig:fig3} presents the evolution of the four evaluation metrics: 
 Precision (P), 
 Recall (R), 
@@ -457,10 +455,6 @@ The project also enhances public safety by reducing the chances of illegal or ha
 
 \section{Computer Vision/Society}
 
-[1] https://ieeexplore.ieee.org/document/10009811
-
-[2] https://ieeexplore.ieee.org/document/10914966
-
 [3] https://ieeexplore.ieee.org/document/10332925
 
 The spread of machine vision technologies has revolutionized urban infrastructure, 
@@ -479,7 +473,7 @@ An object-tracking approach utilizing frame-differencing,
 adaptive thresholding, 
 and tracking algorithms, 
 which enables real-time detection of moving objects with minimal computational overhead, 
-was demonstrated [1]. 
+was demonstrated \cite{wang_and_zhang}. 
 Such techniques offer an affordable alternative to traditional hardware-intensive solutions, 
 making intelligent automation more accessible to a broader range of applications. 
 Concurrently, 
@@ -490,7 +484,7 @@ allowing real-time detection in everyday environments.
 
 In the context of urban mobility, 
 these advancements have been especially impactful in the development of smart parking systems. 
-The work in [2] illustrates how machine vision can optimize parking space identification and classification, 
+The work in \cite{smart_parking} illustrates how machine vision can optimize parking space identification and classification, 
 alleviating traffic congestion and maximizing space utilization in urban centers. 
 Such systems can provide immediate, 
 data-driven insights, 
@@ -515,7 +509,7 @@ future deployments must ensure privacy by design and transparency in how data is
 
 Beyond urban mobility, 
 integrating robotics into broader societal functions reflects a paradigm shift in public services. 
-As [3] highlights, 
+As \cite{social_robotics} highlights, 
 advances in social robotics show how robotic systems can enhance educational and medical services, 
 particularly in pediatric and healthcare settings. 
 Robots can assist in personalized learning, 
@@ -569,8 +563,16 @@ this system presents a forward-thinking,
 practical solution to the persistent challenges of urban parking, 
 paving the way for smarter, more efficient cities.
 
+\section{References}
 
+\printbibliography
+
+\newpage
+
+\onecolumn
 
 \section{Appendix - Code}
+
+\inputminted{python}{inference_export.py}
 
 \end{document}
