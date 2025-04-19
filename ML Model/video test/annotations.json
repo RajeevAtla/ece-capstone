@@ -1,0 +1,22 @@
+[
+    {
+        "spot_id": "spot_A1",
+        "status": "empty",
+        "timestamp": "2025-04-18T19:25:30"
+    },
+    {
+        "spot_id": "spot_A2",
+        "status": "empty",
+        "timestamp": "2025-04-18T19:25:30"
+    },
+    {
+        "spot_id": "spot_B1",
+        "status": "empty",
+        "timestamp": "2025-04-18T19:25:30"
+    },
+    {
+        "spot_id": "spot_B2",
+        "status": "empty",
+        "timestamp": "2025-04-18T19:25:30"
+    }
+]
