@@ -2,7 +2,7 @@ import cv2
 import json
 
 # === CONFIG ===
-video_path = "ML Model/video test/IMG_6072-2.mp4" 
+video_path = "ML Model/video test/testvid2.mp4" 
 output_json = "predefined_spots.json"
 frame_save_path = "first_frame.jpg"
 

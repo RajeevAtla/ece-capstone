@@ -170,14 +170,8 @@
                         <tbody id="lot-A">
                             <script>
                                 let lotA = "";
-                                for (let i = 1; i <= 34; i++) {
-                                    if (i === 14 || i === 30) {
-                                        lotA += `<tr><td class="not-parking">X</td></tr>`;
-                                    } else if (i >= 31) {
-                                        lotA += `<tr><td class="handicap">A-${i}</td></tr>`;
-                                    } else {
-                                        lotA += `<tr><td class="vacant">A-${i}</td></tr>`;
-                                    }
+                                for (let i = 1; i <= 10; i++) {
+                                    lotA += `<tr><td class="vacant">A-${i}</td></tr>`;
                                 }
                                 document.write(lotA);
                             </script>
@@ -192,7 +186,7 @@
                         <tbody id="lot-B">
                             <script>
                                 let lotB = "";
-                                for (let i = 1; i <= 33; i++) {
+                                for (let i = 1; i <= 10; i++) {
                                     lotB += `<tr>
                                         <td class="vacant">BL-${i}</td>
                                         <td class="vacant">BR-${i}</td>
@@ -210,11 +204,11 @@
                     <table>
                         <tbody id="lot-C">
                             <script>
-                                let lotC = "<tr><td class='vacant'>CL-1</td><td class='not-parking'>X</td></tr>";
-                                for (let i = 2; i <= 31; i++) {
+                                let lotC = "";
+                                for (let i = 1; i <= 10; i++) {
                                     lotC += `<tr>
                                         <td class="vacant">CL-${i}</td>
-                                        <td class="vacant">CR-${i - 1}</td>
+                                        <td class="vacant">CR-${i}</td>
                                     </tr>`;
                                 }
                                 document.write(lotC);
@@ -230,15 +224,10 @@
                         <tbody id="lot-D">
                             <script>
                                 let lotD = "";
-                                for (let i = 1; i <= 31; i++) {
-                                    if ([25, 26, 28, 30].includes(i)) {
-                                        lotD += `<tr><td class="not-parking">X</td></tr>`;
-                                    } else if (i >= 25) {
-                                        lotD += `<tr><td class="handicap">D-${i}</td></tr>`;
-                                    } else {
-                                        lotD += `<tr><td class="vacant">D-${i}</td></tr>`;
-                                    }
+                                for (let i = 1; i <= 10; i++) {
+                                    lotD += `<tr><td class="vacant">D-${i}</td></tr>`;
                                 }
+        
                                 document.write(lotD);
                             </script>
                         </tbody>

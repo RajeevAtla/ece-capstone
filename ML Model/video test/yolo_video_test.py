@@ -4,71 +4,81 @@ import json
 from datetime import datetime
 from ultralytics import YOLO
 
-# Define persistent parking spot positions manually (x1, y1, x2, y2)
-predefined_spots = {
-    "spot_A1": [100, 50, 200, 150],
-    "spot_A2": [220, 50, 320, 150],
-    "spot_B1": [100, 160, 200, 260],
-    "spot_B2": [220, 160, 320, 260],
-}
+# Load the trained YOLO model
+model = YOLO('ML Model/best.pt')
 
-model = YOLO('../best.pt')
+def process_frame(frame):
+    """Runs YOLO model on a single frame and returns bounding box info."""
+    results = model(frame)
+    boxes = []
+    for result in results:
+        for box in result.boxes:
+            x1, y1, x2, y2 = map(int, box.xyxy[0])  # Bounding box coordinates
+            conf = box.conf[0].item()  # Confidence score
+            class_id = int(box.cls[0].item())  # Class ID
+            label = "Car" if class_id == 0 else "Empty"
+            color = (0, 0, 255) if class_id == 0 else (0, 255, 0)
+            boxes.append((x1, y1, x2, y2, conf, label, color))
+    return boxes
+
+def draw_boxes(frame, boxes):
+    """Draws bounding boxes from stored results on a given frame."""
+    for (x1, y1, x2, y2, conf, label, color) in boxes:
+        cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
+        cv2.putText(frame, f"{label} {conf:.2f}", (x1, y1 - 10),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+    return frame
+def load_predefined_spots(json_path="predefined_spots.json"):
+    with open(json_path, 'r') as f:
+        return {k: tuple(v) for k, v in json.load(f).items()}
 
 def compute_iou(boxA, boxB):
+    # boxA and boxB: (x1, y1, x2, y2)
     xA = max(boxA[0], boxB[0])
     yA = max(boxA[1], boxB[1])
     xB = min(boxA[2], boxB[2])
     yB = min(boxA[3], boxB[3])
-
-    interArea = max(0, xB - xA + 1) * max(0, yB - yA + 1)
-    if interArea == 0:
-        return 0.0
-
-    boxAArea = (boxA[2] - boxA[0] + 1) * (boxA[3] - boxA[1] + 1)
-    boxBArea = (boxB[2] - boxB[0] + 1) * (boxB[3] - boxB[1] + 1)
-
-    iou = interArea / float(boxAArea + boxBArea - interArea)
+    
+    interW = max(0, xB - xA)
+    interH = max(0, yB - yA)
+    interArea = interW * interH
+    
+    boxAArea = (boxA[2] - boxA[0]) * (boxA[3] - boxA[1])
+    boxBArea = (boxB[2] - boxB[0]) * (boxB[3] - boxB[1])
+    
+    iou = interArea / float(boxAArea + boxBArea - interArea + 1e-5)
     return iou
 
-def process_frame(frame):
-    results = model(frame)
-    detections = []
-    for result in results:
-        for box in result.boxes:
-            x1, y1, x2, y2 = map(int, box.xyxy[0])
-            conf = box.conf[0].item()
-            class_id = int(box.cls[0].item())
-            label = "Car" if class_id == 0 else "Empty"
-            detections.append((x1, y1, x2, y2, label, conf))
-    return detections
+def process_frame_with_predefined(frame, detections, predefined_spots, iou_threshold=0.3):
+    spot_status = {spot_id: "empty" for spot_id in predefined_spots}
 
-def match_to_spots(detections):
-    matched = {}
-    for spot_id, spot_box in predefined_spots.items():
-        best_iou = 0
-        best_label = "empty"
-        for (x1, y1, x2, y2, label, conf) in detections:
-            det_box = [x1, y1, x2, y2]
-            iou = compute_iou(spot_box, det_box)
-            if iou > best_iou and iou > 0.3:  # IoU threshold
-                best_iou = iou
-                best_label = "occupied" if label == "Car" else "empty"
-        matched[spot_id] = best_label
-    return matched
+    for det in detections:
+        x1, y1, x2, y2, conf, label, _ = det
+        if label != "Car":
+            continue
+        for spot_id, (sx1, sy1, sx2, sy2) in predefined_spots.items():
+            iou = compute_iou((x1, y1, x2, y2), (sx1, sy1, sx2, sy2))
+            if iou >= iou_threshold:
+                spot_status[spot_id] = "occupied"
+                break
 
-def draw_spot_boxes(frame, matched_status):
+    return spot_status
+
+def draw_predefined_boxes(frame, predefined_spots, spot_status):
     for spot_id, (x1, y1, x2, y2) in predefined_spots.items():
-        status = matched_status.get(spot_id, "empty")
-        color = (0, 0, 255) if status == "occupied" else (0, 255, 0)
+        label = spot_status[spot_id]
+        color = (0, 0, 255) if label == "occupied" else (0, 255, 0)
         cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
-        cv2.putText(frame, f"{spot_id} {status}", (x1, y1 - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+        cv2.putText(frame, f"{spot_id} - {label}", (x1, y1 - 5),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.4, color, 1)
     return frame
 
 def main():
-    video_path = "IMG_6074.mov"
-    output_path = "test4.avi"
-    annotations_path = "annotations.json"
+    video_path = "ML Model/video test/testvid2.mp4"
+    output_path = "test_predefined.avi"
+    annotations_path = "vid_annotations.json"
+    model = YOLO('ML Model/best.pt')
+    predefined_spots = load_predefined_spots("predefined_spots.json")
     process_interval = 10
 
     cap = cv2.VideoCapture(video_path)
@@ -82,14 +92,8 @@ def main():
     out = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(*'XVID'), fps, (width, height))
 
     frame_count = 0
+    annotations = []
     last_status = {}
-    annotation_buffer = []
-
-    # Create or clear JSON file
-    with open(annotations_path, "w") as f:
-        json.dump([], f)
-
-    flush_interval = 2 * fps  # every 2 seconds
 
     while cap.isOpened():
         ret, frame = cap.read()
@@ -97,59 +101,47 @@ def main():
             break
 
         if frame_count % process_interval == 0:
-            detections = process_frame(frame)
-            current_status = match_to_spots(detections)
+            detections = []
+            results = model(frame)
+            for result in results:
+                for box in result.boxes:
+                    x1, y1, x2, y2 = map(int, box.xyxy[0])
+                    conf = box.conf[0].item()
+                    class_id = int(box.cls[0].item())
+                    label = "Car" if class_id == 0 else "Empty"
+                    color = (0, 0, 255) if label == "Car" else (0, 255, 0)
+                    detections.append((x1, y1, x2, y2, conf, label, color))
 
+            spot_status = process_frame_with_predefined(frame, detections, predefined_spots)
             timestamp = datetime.now().replace(microsecond=0).isoformat()
-            for spot_id, status in current_status.items():
+
+            for spot_id, status in spot_status.items():
                 if spot_id not in last_status or last_status[spot_id] != status:
-                    annotation_buffer.append({
+                    annotations.append({
                         "spot_id": spot_id,
                         "status": status,
                         "timestamp": timestamp
                     })
                     last_status[spot_id] = status
 
-        # Flush to JSON every 2 seconds
-        if frame_count % flush_interval == 0 and annotation_buffer:
-            with open(annotations_path, "r+") as f:
-                try:
-                    data = json.load(f)
-                except json.JSONDecodeError:
-                    data = []
-                data.extend(annotation_buffer)
-                f.seek(0)
-                json.dump(data, f, indent=4)
-                f.truncate()
-            annotation_buffer = []
+            frame = draw_predefined_boxes(frame, predefined_spots, spot_status)
 
-        # Draw static boxes and statuses
-        output_frame = draw_spot_boxes(frame.copy(), last_status)
-        out.write(output_frame)
-        cv2.imshow("Persistent Spot Detection", output_frame)
-
+        out.write(frame)
+        cv2.imshow("Smart Parking - Predefined Spots", frame)
         if cv2.waitKey(int(1000 / fps)) & 0xFF == ord('q'):
             break
 
         frame_count += 1
 
-    # Final flush
-    if annotation_buffer:
-        with open(annotations_path, "r+") as f:
-            try:
-                data = json.load(f)
-            except json.JSONDecodeError:
-                data = []
-            data.extend(annotation_buffer)
-            f.seek(0)
-            json.dump(data, f, indent=4)
-            f.truncate()
-
     cap.release()
     out.release()
     cv2.destroyAllWindows()
-    print(f"✅ Video saved to {output_path}")
-    print(f"📄 Spot-persistent annotations saved to {annotations_path}")
+
+    with open(annotations_path, 'w') as f:
+        json.dump(annotations, f, indent=4)
+
+    print(f"✅ Processed video saved as {output_path}")
+    print(f"📄 Annotations saved to {annotations_path}")
 
 if __name__ == "__main__":
     main()

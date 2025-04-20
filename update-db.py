@@ -1,31 +1,21 @@
-import csv
-from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean, TIMESTAMP, func, text
+import pandas as pd
+from sqlalchemy import create_engine, Column, String, Text, TIMESTAMP, text
 from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.dialects.postgresql import insert
 
 # ✅ DB connection
-DATABASE_URL = "postgresql://postgres:abhiramvemuri123@localhost/parking_db"
+DATABASE_URL = "postgresql://postgres:parshva123@localhost/parking_db"
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 Base = declarative_base()
 
-# ✅ ORM Model
+# ✅ ORM Model (Matches new table schema)
 class ParkingSpot(Base):
     __tablename__ = "parking_spots"
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    image_id = Column(String(50), nullable=False)
-    spot_id = Column(Integer, nullable=False)
-    x_min = Column(Float, nullable=False)
-    y_min = Column(Float, nullable=False)
-    width = Column(Float, nullable=False)
-    height = Column(Float, nullable=False)
-    status = Column(Boolean, default=True)
-    last_updated = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
-
-    __table_args__ = (
-        # Enforce uniqueness on image_id + spot_id
-        {'sqlite_autoincrement': True},
-    )
+    spot_id = Column(String, primary_key=True)
+    status = Column(Text, nullable=False)
+    last_updated = Column(TIMESTAMP, nullable=False)
 
 # ✅ Schema execution
 def initialize_db():
@@ -36,55 +26,43 @@ def initialize_db():
         conn.commit()
         print("✅ Database schema initialized.")
 
-# ✅ CSV Importer
-def import_parking_spots_from_csv(file_path: str):
+# ✅ Status Updater from Annotations CSV
+def update_status_from_annotations_csv(csv_path: str):
     session = SessionLocal()
     try:
-        with open(file_path, newline='') as csvfile:
-            reader = csv.DictReader(csvfile)
+        df = pd.read_csv(csv_path)
+        df['last_updated'] = pd.to_datetime(df['last_updated'])
 
-            for row in reader:
-                image_id = row["image_id"]
-                spot_id = int(row["spot_id"])
-                x_min = float(row["x_min"])
-                y_min = float(row["y_min"])
-                width = float(row["width"])
-                height = float(row["height"])
+        # Keep only the latest record per spot_id
+        latest_df = df.sort_values("last_updated").drop_duplicates("spot_id", keep="last")
 
-                # Try to find existing record
-                existing = session.query(ParkingSpot).filter_by(
-                    image_id=image_id, spot_id=spot_id
-                ).first()
+        for _, row in latest_df.iterrows():
+            spot_id = row["spot_id"]
+            status = row["status"]
+            timestamp = row["last_updated"]
 
-                if existing:
-                    # Update existing
-                    existing.x_min = x_min
-                    existing.y_min = y_min
-                    existing.width = width
-                    existing.height = height
-                    existing.status = True  # or set from ML model later
-                else:
-                    # Insert new
-                    new_spot = ParkingSpot(
-                        image_id=image_id,
-                        spot_id=spot_id,
-                        x_min=x_min,
-                        y_min=y_min,
-                        width=width,
-                        height=height
-                    )
-                    session.add(new_spot)
+            stmt = insert(ParkingSpot).values(
+                spot_id=spot_id,
+                status=status,
+                last_updated=timestamp
+            ).on_conflict_do_update(
+                index_elements=["spot_id"],
+                set_={
+                    "status": status,
+                    "last_updated": timestamp
+                }
+            )
+            session.execute(stmt)
 
         session.commit()
-        print("✅ Parking spots successfully inserted/updated from CSV!")
+        print("✅ Parking spot statuses inserted/updated from CSV!")
 
     except Exception as e:
         session.rollback()
-        print(f"❌ Error during import: {e}")
+        print(f"❌ Error during status update: {e}")
     finally:
         session.close()
-
-# ✅ Run when script is executed
+# ✅ Run when executed
 if __name__ == "__main__":
     initialize_db()
-    import_parking_spots_from_csv("C:/Users/abhir/ece-capstone/parking_spots.csv")
+    update_status_from_annotations_csv("parking_spots.csv")
