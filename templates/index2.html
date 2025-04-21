@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rutgers Parking Lot Status</title>
+    
+    <!-- Link external stylesheet if needed -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #990000;
+            margin-bottom: 30px;
+        }
+
+        .lot-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .lot {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+        }
+
+        .lot h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 80px;
+            height: 40px;
+            border: 1px solid #999;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .occupied {
+            background-color: #E53935;
+            color: white;
+        }
+
+        .vacant {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .legend {
+            margin-top: 40px;
+        }
+
+        .legend span {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .legend .vacant {
+            background-color: #4CAF50;
+        }
+
+        .legend .occupied {
+            background-color: #E53935;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rutgers Parking Lot Live Status</h1>
+
+    <div class="lot-container" id="parking-lots">
+        <!-- Parking lots will be injected here -->
+    </div>
+
+    <div class="legend">
+        <span class="vacant">Vacant</span>
+        <span class="occupied">Occupied</span>
+    </div>
+
+    <script>
+        // Load data and build the parking lot tables
+        fetch('/api/parking_status')
+        .then(response => response.json())
+        .then(data => {
+            const lots = {};
+            const lotContainer = document.getElementById("parking-lots");
+
+            // Group by lot prefix (e.g., spot_A_1 → Lot A)
+            data.forEach(spot => {
+                let lotName = "Lot A";  // Default
+                if (spot.spot_id.includes("_B_")) lotName = "Lot B";
+                else if (spot.spot_id.includes("_C_")) lotName = "Lot C";
+                else if (spot.spot_id.includes("_D_")) lotName = "Lot D";
+
+                if (!lots[lotName]) lots[lotName] = [];
+                lots[lotName].push(spot);
+            });
+
+            for (const lotName in lots) {
+                const lotDiv = document.createElement("div");
+                lotDiv.className = "lot";
+
+                let html = `<h2>${lotName}</h2><table>`;
+                lots[lotName].forEach((spot, index) => {
+                    if (index % 2 === 0) html += "<tr>";
+                    html += `<td class="${spot.status}">${spot.spot_id}</td>`;
+                    if (index % 2 === 1) html += "</tr>";
+                });
+                html += "</table>";
+
+                lotDiv.innerHTML = html;
+                lotContainer.appendChild(lotDiv);
+            }
+        });
+    </script>
+
+</body>
+</html>

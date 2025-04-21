@@ -1,5 +1,7 @@
-CREATE TABLE IF NOT EXISTS parking_spots (
-        spot_id VARCHAR PRIMARY KEY,
-        status TEXT CHECK (status IN ('occupied', 'empty')),
-        last_updated TIMESTAMP NOT NULL)
-    ;
+DROP TABLE IF EXISTS parking_spots;
+
+CREATE TABLE parking_spots (
+    spot_id TEXT PRIMARY KEY,
+    status TEXT NOT NULL,
+    last_updated TIMESTAMP NOT NULL
+);

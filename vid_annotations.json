@@ -2,1466 +2,1471 @@
     {
         "spot_id": "spot_1",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_2",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_3",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_4",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_5",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_6",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_7",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_8",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_9",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_10",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_11",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_12",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_13",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_14",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_15",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_16",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_17",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_18",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_19",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_20",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_21",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_22",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_23",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_24",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_25",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_26",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_27",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_28",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_29",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_30",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_31",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_32",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_33",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_34",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_35",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_36",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_37",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_38",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_39",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_40",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_41",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_42",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_43",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_44",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_45",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_46",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_47",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_48",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_49",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_50",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_51",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_52",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_53",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_54",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_55",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_56",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_57",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_58",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_59",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_60",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:48"
+        "timestamp": "2025-04-20T15:43:47"
     },
     {
         "spot_id": "spot_14",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_17",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_23",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
-        "spot_id": "spot_30",
+        "spot_id": "spot_36",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_37",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_46",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_47",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_48",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
+    },
+    {
+        "spot_id": "spot_49",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_51",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_3",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_17",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_27",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_35",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_45",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:49"
-    },
-    {
-        "spot_id": "spot_49",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_51",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_54",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:49"
+        "timestamp": "2025-04-20T15:43:48"
     },
     {
         "spot_id": "spot_24",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:50"
+        "timestamp": "2025-04-20T15:43:49"
     },
     {
         "spot_id": "spot_27",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:50"
+        "timestamp": "2025-04-20T15:43:49"
     },
     {
         "spot_id": "spot_35",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:50"
+        "timestamp": "2025-04-20T15:43:49"
     },
     {
         "spot_id": "spot_36",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:50"
+        "timestamp": "2025-04-20T15:43:49"
     },
     {
         "spot_id": "spot_46",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:50"
+        "timestamp": "2025-04-20T15:43:49"
     },
     {
         "spot_id": "spot_47",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:50"
+        "timestamp": "2025-04-20T15:43:49"
     },
     {
         "spot_id": "spot_49",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:50"
+        "timestamp": "2025-04-20T15:43:49"
     },
     {
         "spot_id": "spot_23",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:50"
     },
     {
         "spot_id": "spot_45",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:50"
     },
     {
         "spot_id": "spot_51",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:50"
     },
     {
         "spot_id": "spot_54",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:50"
+    },
+    {
+        "spot_id": "spot_56",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:50"
     },
     {
         "spot_id": "spot_58",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:50"
     },
     {
         "spot_id": "spot_1",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:51"
     },
     {
         "spot_id": "spot_3",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:51"
     },
     {
         "spot_id": "spot_8",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:51"
     },
     {
         "spot_id": "spot_9",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:51"
     },
     {
         "spot_id": "spot_12",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
+        "timestamp": "2025-04-20T15:43:51"
     },
     {
         "spot_id": "spot_14",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_26",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_27",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_32",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_35",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_42",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_43",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_45",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_46",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_47",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_48",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_56",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:51"
-    },
-    {
-        "spot_id": "spot_2",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
-    },
-    {
-        "spot_id": "spot_3",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
-    },
-    {
-        "spot_id": "spot_6",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:52"
-    },
-    {
-        "spot_id": "spot_8",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
-    },
-    {
-        "spot_id": "spot_14",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
-    },
-    {
-        "spot_id": "spot_15",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:52"
-    },
-    {
-        "spot_id": "spot_18",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:51"
     },
     {
         "spot_id": "spot_19",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_26",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_27",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_32",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_35",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_42",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_43",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_45",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_46",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_47",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_48",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:51"
+    },
+    {
+        "spot_id": "spot_2",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:52"
+    },
+    {
+        "spot_id": "spot_3",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:52"
+    },
+    {
+        "spot_id": "spot_6",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:52"
+    },
+    {
+        "spot_id": "spot_8",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:52"
+    },
+    {
+        "spot_id": "spot_14",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:52"
+    },
+    {
+        "spot_id": "spot_15",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:52"
+    },
+    {
+        "spot_id": "spot_18",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_23",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_24",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_25",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_26",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_34",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_35",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_38",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_44",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_45",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_48",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_51",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_52",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_54",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_56",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:52"
+        "timestamp": "2025-04-20T15:43:52"
     },
     {
         "spot_id": "spot_1",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_3",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_6",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_11",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_15",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
-    },
-    {
-        "spot_id": "spot_17",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_18",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_21",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_23",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
+    },
+    {
+        "spot_id": "spot_27",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_30",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_32",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_34",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_36",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_43",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_47",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_48",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_53",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_55",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_56",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_57",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_15",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_16",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
-    },
-    {
-        "spot_id": "spot_17",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_21",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
+    },
+    {
+        "spot_id": "spot_27",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_30",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
     },
     {
         "spot_id": "spot_39",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
+        "timestamp": "2025-04-20T15:43:53"
+    },
+    {
+        "spot_id": "spot_45",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:53"
+    },
+    {
+        "spot_id": "spot_46",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:53"
+    },
+    {
+        "spot_id": "spot_48",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:53"
+    },
+    {
+        "spot_id": "spot_15",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:54"
+    },
+    {
+        "spot_id": "spot_31",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:54"
     },
     {
         "spot_id": "spot_41",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
-    },
-    {
-        "spot_id": "spot_45",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
-    },
-    {
-        "spot_id": "spot_46",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:53"
-    },
-    {
-        "spot_id": "spot_48",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:53"
-    },
-    {
-        "spot_id": "spot_15",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:54"
-    },
-    {
-        "spot_id": "spot_31",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:54"
+        "timestamp": "2025-04-20T15:43:54"
     },
     {
         "spot_id": "spot_12",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:54"
-    },
-    {
-        "spot_id": "spot_15",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:54"
+        "timestamp": "2025-04-20T15:43:55"
     },
     {
         "spot_id": "spot_16",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:54"
+        "timestamp": "2025-04-20T15:43:55"
     },
     {
         "spot_id": "spot_17",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:54"
-    },
-    {
-        "spot_id": "spot_25",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:54"
+        "timestamp": "2025-04-20T15:43:55"
     },
     {
         "spot_id": "spot_26",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:54"
+        "timestamp": "2025-04-20T15:43:55"
     },
     {
         "spot_id": "spot_31",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:54"
+        "timestamp": "2025-04-20T15:43:55"
     },
     {
         "spot_id": "spot_32",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:54"
+        "timestamp": "2025-04-20T15:43:55"
     },
     {
         "spot_id": "spot_46",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:54"
+        "timestamp": "2025-04-20T15:43:55"
     },
     {
-        "spot_id": "spot_48",
+        "spot_id": "spot_15",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:54"
+        "timestamp": "2025-04-20T15:43:56"
     },
     {
         "spot_id": "spot_16",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:55"
+        "timestamp": "2025-04-20T15:43:56"
     },
     {
         "spot_id": "spot_17",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:55"
+        "timestamp": "2025-04-20T15:43:56"
     },
     {
         "spot_id": "spot_22",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:55"
-    },
-    {
-        "spot_id": "spot_25",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:55"
+        "timestamp": "2025-04-20T15:43:56"
     },
     {
         "spot_id": "spot_26",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:55"
+        "timestamp": "2025-04-20T15:43:56"
     },
     {
         "spot_id": "spot_46",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:55"
-    },
-    {
-        "spot_id": "spot_48",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:55"
+        "timestamp": "2025-04-20T15:43:56"
     },
     {
         "spot_id": "spot_16",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:57"
     },
     {
         "spot_id": "spot_17",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:57"
     },
     {
         "spot_id": "spot_22",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:57"
     },
     {
         "spot_id": "spot_26",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:57"
     },
     {
         "spot_id": "spot_27",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:57"
     },
     {
         "spot_id": "spot_29",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:57"
+    },
+    {
+        "spot_id": "spot_45",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:57"
     },
     {
         "spot_id": "spot_48",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:57"
     },
     {
         "spot_id": "spot_16",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:58"
     },
     {
         "spot_id": "spot_17",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:58"
     },
     {
         "spot_id": "spot_27",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:58"
     },
     {
         "spot_id": "spot_29",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:58"
     },
     {
         "spot_id": "spot_31",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:56"
+        "timestamp": "2025-04-20T15:43:58"
+    },
+    {
+        "spot_id": "spot_45",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:43:58"
     },
     {
         "spot_id": "spot_26",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:57"
+        "timestamp": "2025-04-20T15:43:59"
+    },
+    {
+        "spot_id": "spot_46",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:43:59"
     },
     {
         "spot_id": "spot_55",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:57"
+        "timestamp": "2025-04-20T15:43:59"
     },
     {
         "spot_id": "spot_26",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:57"
+        "timestamp": "2025-04-20T15:44:00"
     },
     {
         "spot_id": "spot_31",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:57"
+        "timestamp": "2025-04-20T15:44:00"
     },
     {
         "spot_id": "spot_32",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:57"
-    },
-    {
-        "spot_id": "spot_46",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:57"
-    },
-    {
-        "spot_id": "spot_16",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:58"
-    },
-    {
-        "spot_id": "spot_46",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:58"
-    },
-    {
-        "spot_id": "spot_16",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:58"
-    },
-    {
-        "spot_id": "spot_26",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:30:58"
-    },
-    {
-        "spot_id": "spot_27",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:30:58"
+        "timestamp": "2025-04-20T15:44:00"
     },
     {
         "spot_id": "spot_15",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:59"
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_16",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_17",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_29",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_46",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_15",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_16",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_17",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_26",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_27",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_29",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:01"
+    },
+    {
+        "spot_id": "spot_15",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:02"
     },
     {
         "spot_id": "spot_27",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:59"
+        "timestamp": "2025-04-20T15:44:02"
     },
     {
         "spot_id": "spot_31",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:30:59"
+        "timestamp": "2025-04-20T15:44:02"
     },
     {
         "spot_id": "spot_39",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:59"
+        "timestamp": "2025-04-20T15:44:02"
+    },
+    {
+        "spot_id": "spot_46",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:02"
     },
     {
         "spot_id": "spot_55",
         "status": "empty",
-        "timestamp": "2025-04-19T19:30:59"
+        "timestamp": "2025-04-20T15:44:02"
     },
     {
         "spot_id": "spot_13",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:03"
     },
     {
         "spot_id": "spot_15",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:03"
     },
     {
         "spot_id": "spot_26",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:03"
     },
     {
         "spot_id": "spot_29",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:03"
     },
     {
         "spot_id": "spot_31",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:03"
     },
     {
         "spot_id": "spot_32",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:00"
-    },
-    {
-        "spot_id": "spot_46",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:03"
     },
     {
         "spot_id": "spot_13",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:04"
     },
     {
         "spot_id": "spot_15",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:00"
-    },
-    {
-        "spot_id": "spot_16",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:04"
     },
     {
         "spot_id": "spot_17",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:04"
     },
     {
         "spot_id": "spot_27",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:00"
-    },
-    {
-        "spot_id": "spot_31",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:04"
     },
     {
         "spot_id": "spot_43",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:04"
     },
     {
         "spot_id": "spot_46",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:00"
+        "timestamp": "2025-04-20T15:44:04"
     },
     {
         "spot_id": "spot_17",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:01"
+        "timestamp": "2025-04-20T15:44:05"
     },
     {
         "spot_id": "spot_27",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:01"
+        "timestamp": "2025-04-20T15:44:05"
     },
     {
         "spot_id": "spot_29",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:01"
+        "timestamp": "2025-04-20T15:44:05"
     },
     {
         "spot_id": "spot_39",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:01"
+        "timestamp": "2025-04-20T15:44:05"
     },
     {
         "spot_id": "spot_43",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:01"
-    },
-    {
-        "spot_id": "spot_16",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:01"
-    },
-    {
-        "spot_id": "spot_31",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:01"
+        "timestamp": "2025-04-20T15:44:05"
     },
     {
         "spot_id": "spot_32",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:01"
+        "timestamp": "2025-04-20T15:44:06"
+    },
+    {
+        "spot_id": "spot_36",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:06"
     },
     {
         "spot_id": "spot_46",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:01"
+        "timestamp": "2025-04-20T15:44:06"
     },
     {
         "spot_id": "spot_32",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:02"
+        "timestamp": "2025-04-20T15:44:07"
+    },
+    {
+        "spot_id": "spot_36",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:07"
     },
     {
         "spot_id": "spot_45",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:02"
+        "timestamp": "2025-04-20T15:44:07"
     },
     {
         "spot_id": "spot_29",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:03"
-    },
-    {
-        "spot_id": "spot_39",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:03"
-    },
-    {
-        "spot_id": "spot_45",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:03"
-    },
-    {
-        "spot_id": "spot_15",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:03"
-    },
-    {
-        "spot_id": "spot_17",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:03"
-    },
-    {
-        "spot_id": "spot_26",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:03"
+        "timestamp": "2025-04-20T15:44:08"
     },
     {
         "spot_id": "spot_32",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:03"
+        "timestamp": "2025-04-20T15:44:08"
     },
     {
-        "spot_id": "spot_52",
+        "spot_id": "spot_39",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:03"
-    },
-    {
-        "spot_id": "spot_12",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:04"
-    },
-    {
-        "spot_id": "spot_17",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:04"
-    },
-    {
-        "spot_id": "spot_26",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:04"
+        "timestamp": "2025-04-20T15:44:08"
     },
     {
         "spot_id": "spot_45",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:04"
-    },
-    {
-        "spot_id": "spot_52",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:04"
-    },
-    {
-        "spot_id": "spot_12",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:05"
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:08"
     },
     {
         "spot_id": "spot_15",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:05"
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:09"
     },
     {
-        "spot_id": "spot_16",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:05"
-    },
-    {
-        "spot_id": "spot_18",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:05"
+        "spot_id": "spot_17",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:09"
     },
     {
         "spot_id": "spot_26",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:09"
     },
     {
         "spot_id": "spot_29",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:09"
     },
     {
-        "spot_id": "spot_31",
+        "spot_id": "spot_52",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:09"
+    },
+    {
+        "spot_id": "spot_17",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:09"
+    },
+    {
+        "spot_id": "spot_26",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:09"
+    },
+    {
+        "spot_id": "spot_29",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:09"
+    },
+    {
+        "spot_id": "spot_45",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:09"
+    },
+    {
+        "spot_id": "spot_52",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:09"
+    },
+    {
+        "spot_id": "spot_15",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:10"
+    },
+    {
+        "spot_id": "spot_16",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:10"
+    },
+    {
+        "spot_id": "spot_17",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:10"
+    },
+    {
+        "spot_id": "spot_18",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:10"
+    },
+    {
+        "spot_id": "spot_26",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:10"
+    },
+    {
+        "spot_id": "spot_29",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:10"
     },
     {
         "spot_id": "spot_45",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:10"
     },
     {
         "spot_id": "spot_48",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:10"
     },
     {
         "spot_id": "spot_16",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:11"
+    },
+    {
+        "spot_id": "spot_17",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:11"
     },
     {
         "spot_id": "spot_18",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:11"
     },
     {
         "spot_id": "spot_26",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:05"
-    },
-    {
-        "spot_id": "spot_31",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:11"
     },
     {
         "spot_id": "spot_39",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:05"
-    },
-    {
-        "spot_id": "spot_46",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:11"
     },
     {
         "spot_id": "spot_55",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:05"
+        "timestamp": "2025-04-20T15:44:11"
     },
     {
         "spot_id": "spot_12",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:06"
+        "timestamp": "2025-04-20T15:44:12"
     },
     {
         "spot_id": "spot_26",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:06"
+        "timestamp": "2025-04-20T15:44:12"
     },
     {
         "spot_id": "spot_31",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:06"
-    },
-    {
-        "spot_id": "spot_46",
-        "status": "occupied",
-        "timestamp": "2025-04-19T19:31:06"
+        "timestamp": "2025-04-20T15:44:12"
     },
     {
         "spot_id": "spot_48",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:06"
+        "timestamp": "2025-04-20T15:44:12"
     },
     {
         "spot_id": "spot_55",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:06"
+        "timestamp": "2025-04-20T15:44:12"
     },
     {
         "spot_id": "spot_59",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:06"
+        "timestamp": "2025-04-20T15:44:12"
     },
     {
         "spot_id": "spot_46",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:06"
+        "timestamp": "2025-04-20T15:44:13"
     },
     {
         "spot_id": "spot_50",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:06"
+        "timestamp": "2025-04-20T15:44:13"
     },
     {
         "spot_id": "spot_23",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:07"
+        "timestamp": "2025-04-20T15:44:14"
     },
     {
         "spot_id": "spot_31",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:07"
+        "timestamp": "2025-04-20T15:44:14"
     },
     {
         "spot_id": "spot_32",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:07"
+        "timestamp": "2025-04-20T15:44:14"
     },
     {
         "spot_id": "spot_40",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:07"
+        "timestamp": "2025-04-20T15:44:14"
     },
     {
         "spot_id": "spot_50",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:07"
+        "timestamp": "2025-04-20T15:44:14"
     },
     {
         "spot_id": "spot_59",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:07"
+        "timestamp": "2025-04-20T15:44:14"
     },
     {
         "spot_id": "spot_24",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:15"
     },
     {
         "spot_id": "spot_25",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:15"
     },
     {
         "spot_id": "spot_31",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:15"
+    },
+    {
+        "spot_id": "spot_32",
+        "status": "occupied",
+        "timestamp": "2025-04-20T15:44:15"
     },
     {
         "spot_id": "spot_36",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:15"
     },
     {
         "spot_id": "spot_15",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_23",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_24",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_25",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:16"
+    },
+    {
+        "spot_id": "spot_32",
+        "status": "empty",
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_36",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_40",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_46",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:08"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_15",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:09"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_23",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:09"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_24",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:09"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_25",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:09"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_31",
         "status": "empty",
-        "timestamp": "2025-04-19T19:31:09"
+        "timestamp": "2025-04-20T15:44:16"
     },
     {
         "spot_id": "spot_36",
         "status": "occupied",
-        "timestamp": "2025-04-19T19:31:09"
-    },
-    {
-        "spot_id": "spot_46",
-        "status": "empty",
-        "timestamp": "2025-04-19T19:31:09"
+        "timestamp": "2025-04-20T15:44:16"
     }
 ]
