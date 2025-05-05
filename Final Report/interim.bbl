@@ -1,0 +1,187 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{yolo11_ultralytics}{software}{}
+      \name{author}{2}{}{%
+        {{hash=c5c5e5cd7f4f477f617289b32613deb0}{%
+           family={Jocher},
+           familyi={J\bibinitperiod},
+           given={Glenn},
+           giveni={G\bibinitperiod}}}%
+        {{hash=b8739ebbf3f871d471b6720a02ed541f}{%
+           family={Qiu},
+           familyi={Q\bibinitperiod},
+           given={Jing},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ffa0dad9709ac21fa40cfa507db39d1}
+      \strng{fullhash}{7ffa0dad9709ac21fa40cfa507db39d1}
+      \strng{bibnamehash}{7ffa0dad9709ac21fa40cfa507db39d1}
+      \strng{authorbibnamehash}{7ffa0dad9709ac21fa40cfa507db39d1}
+      \strng{authornamehash}{7ffa0dad9709ac21fa40cfa507db39d1}
+      \strng{authorfullhash}{7ffa0dad9709ac21fa40cfa507db39d1}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Ultralytics YOLO11}
+      \field{version}{11.0.0}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/ultralytics/ultralytics
+      \endverb
+      \verb{url}
+      \verb https://github.com/ultralytics/ultralytics
+      \endverb
+    \endentry
+    \entry{smart_parking}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=9b506584d478306a37fc7f0e94395aff}{%
+           family={M},
+           familyi={M\bibinitperiod},
+           given={Ramesh},
+           giveni={R\bibinitperiod}}}%
+        {{hash=2a6fe91219febab6f0922147ad86a94f}{%
+           family={N},
+           familyi={N\bibinitperiod},
+           given={Sriram},
+           giveni={S\bibinitperiod}}}%
+        {{hash=53d0a1b4002aed8d6ce645ef7660cb14}{%
+           family={M},
+           familyi={M\bibinitperiod},
+           given={Suganth\bibnamedelima K},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=94862557972347a223983d84347f4d7e}{%
+           family={Krushna\bibnamedelimb K\bibnamedelima S},
+           familyi={K\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Shree\bibnamedelima Tharun},
+           giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=7c489fbd41b68e3fd0d4fff78ceadad2}{%
+           family={A},
+           familyi={A\bibinitperiod},
+           given={Anitha\bibnamedelima Rani},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=de9da1b9cad30b4397fd71c91544eebe}{%
+           family={K},
+           familyi={K\bibinitperiod},
+           given={Kodeeswari},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{651f3666d12d334ad08e7eb9c33e82d0}
+      \strng{fullhash}{a2516ca19d4b20785fa7413f63943165}
+      \strng{bibnamehash}{651f3666d12d334ad08e7eb9c33e82d0}
+      \strng{authorbibnamehash}{651f3666d12d334ad08e7eb9c33e82d0}
+      \strng{authornamehash}{651f3666d12d334ad08e7eb9c33e82d0}
+      \strng{authorfullhash}{a2516ca19d4b20785fa7413f63943165}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2025 3rd International Conference on Intelligent Data Communication Technologies and Internet of Things (IDCIoT)}
+      \field{title}{Efficient Smart Parking Space Identification and Classification System Using YOLOv8 Network Model}
+      \field{year}{2025}
+      \field{pages}{1332\bibrangedash 1337}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IDCIOT64235.2025.10914966
+      \endverb
+      \keyw{Training;YOLO;Space vehicles;Accuracy;Automated parking;Streaming media;Real-time systems;Data models;Traffic congestion;Testing;Machine Learning;CNN;YOLO;Smart Parking System (SPS);Parking lot;Image segmentation}
+    \endentry
+    \entry{social_robotics}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=cdab8228a8f4eee85b21968c7d335c7e}{%
+           family={Thaymara\bibnamedelima Romulo},
+           familyi={T\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={C.\bibnamedelimi S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=72ce314aadf36dc71acf1da54a1bb96a}{%
+           family={Boscatti},
+           familyi={B\bibinitperiod},
+           given={Lucas\bibnamedelima P.},
+           giveni={L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=9bd2cdc6ff2587e768a09e9bafad6e7f}{%
+           family={Rejane\bibnamedelima Faria},
+           familyi={R\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={W.\bibnamedelimi S.\bibnamedelimi C.},
+           giveni={W\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=818a8d1ef97c6b832ab8aadc368b79b5}{%
+           family={Brandão},
+           familyi={B\bibinitperiod},
+           given={Alexandre\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e5babcf594a24ace2fef0e6c13817b54}
+      \strng{fullhash}{5c71cab693af6d1a8d121044c81be226}
+      \strng{bibnamehash}{e5babcf594a24ace2fef0e6c13817b54}
+      \strng{authorbibnamehash}{e5babcf594a24ace2fef0e6c13817b54}
+      \strng{authornamehash}{e5babcf594a24ace2fef0e6c13817b54}
+      \strng{authorfullhash}{5c71cab693af6d1a8d121044c81be226}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2023 Latin American Robotics Symposium (LARS), 2023 Brazilian Symposium on Robotics (SBR), and 2023 Workshop on Robotics in Education (WRE)}
+      \field{title}{Advances in Social Robotics: A Brief Review of Recent Contributions and Innovations}
+      \field{year}{2023}
+      \field{pages}{35\bibrangedash 40}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/LARS/SBR/WRE59448.2023.10332925
+      \endverb
+      \keyw{Technological innovation;Pediatrics;Conferences;Education;Medical services;Variable speed drives;Object recognition;Social Robotics;Acceptability;Advancements.}
+    \endentry
+    \entry{wang_and_zhang}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=9b652a7d01690a36abe5318847262fa0}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={YiHui},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ca31d64b21b90de1831b4a2d6adc5a0f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={HuaLiang},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{f76a50cd5d7c31a8454643276ffd6a71}
+      \strng{fullhash}{f76a50cd5d7c31a8454643276ffd6a71}
+      \strng{bibnamehash}{f76a50cd5d7c31a8454643276ffd6a71}
+      \strng{authorbibnamehash}{f76a50cd5d7c31a8454643276ffd6a71}
+      \strng{authornamehash}{f76a50cd5d7c31a8454643276ffd6a71}
+      \strng{authorfullhash}{f76a50cd5d7c31a8454643276ffd6a71}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 International Conference on Image Processing, Computer Vision and Machine Learning (ICICML)}
+      \field{title}{Research on machine vision technology based detection and tracking of objects on video image}
+      \field{year}{2022}
+      \field{pages}{267\bibrangedash 270}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/ICICML57342.2022.10009811
+      \endverb
+      \keyw{Computer vision;Target tracking;Image color analysis;Machine vision;Simulation;Object detection;Machine learning;object detection;object tracking;machine vision technology;tracking method;simulation verification}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
