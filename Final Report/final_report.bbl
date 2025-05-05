@@ -19,6 +19,13 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{dataset_images}{misc}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labeltitlesource}{title}
+      \field{title}{Image-Based Parking Space Detection and Occupancy Classification}
+      \field{year}{2023}
+    \endentry
     \entry{yolo11_ultralytics}{software}{}
       \name{author}{2}{}{%
         {{hash=c5c5e5cd7f4f477f617289b32613deb0}{%
@@ -104,6 +111,32 @@
       \verb 10.1109/IDCIOT64235.2025.10914966
       \endverb
       \keyw{Training;YOLO;Space vehicles;Accuracy;Automated parking;Streaming media;Real-time systems;Data models;Traffic congestion;Testing;Machine Learning;CNN;YOLO;Smart Parking System (SPS);Parking lot;Image segmentation}
+    \endentry
+    \entry{images_original}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6ab380923456ce0b39a1ca1ac0b9683d}{%
+           family={Marek},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6ab380923456ce0b39a1ca1ac0b9683d}
+      \strng{fullhash}{6ab380923456ce0b39a1ca1ac0b9683d}
+      \strng{bibnamehash}{6ab380923456ce0b39a1ca1ac0b9683d}
+      \strng{authorbibnamehash}{6ab380923456ce0b39a1ca1ac0b9683d}
+      \strng{authornamehash}{6ab380923456ce0b39a1ca1ac0b9683d}
+      \strng{authorfullhash}{6ab380923456ce0b39a1ca1ac0b9683d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CV}
+      \field{eprinttype}{arXiv}
+      \field{title}{Image-Based Parking Space Occupancy Classification: Dataset and Baseline}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2107.12207
+      \endverb
     \endentry
     \entry{social_robotics}{inproceedings}{}
       \name{author}{4}{}{%
