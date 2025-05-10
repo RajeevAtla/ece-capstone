@@ -19,6 +19,54 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{parking_space_management}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=84bcfc07a677b1fcb9233c6afaff0112}{%
+           family={Gozner},
+           familyi={G\bibinitperiod},
+           given={Máté},
+           giveni={M\bibinitperiod}}}%
+        {{hash=72cb53f9ee943bc2424dc49561b9a2a5}{%
+           family={Fischer},
+           familyi={F\bibinitperiod},
+           given={Mátyás-Zsigmond},
+           giveni={M\bibinithyphendelim Z\bibinitperiod}}}%
+        {{hash=9e89caec3c31a4efa9a159dc1102645c}{%
+           family={Simon},
+           familyi={S\bibinitperiod},
+           given={Károly},
+           giveni={K\bibinitperiod}}}%
+        {{hash=01f293c07374e86c4bb0fe3330970204}{%
+           family={Zölde},
+           familyi={Z\bibinitperiod},
+           given={Attila},
+           giveni={A\bibinitperiod}}}%
+        {{hash=60c42a8793150733b90dcb230e046ce9}{%
+           family={Fazakas},
+           familyi={F\bibinitperiod},
+           given={Lóránt-Tibor},
+           giveni={L\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{fbf7858e2029694a6d333dee25224830}
+      \strng{fullhash}{47a3ce48b3514c97d45fbf92a405fd82}
+      \strng{bibnamehash}{fbf7858e2029694a6d333dee25224830}
+      \strng{authorbibnamehash}{fbf7858e2029694a6d333dee25224830}
+      \strng{authornamehash}{fbf7858e2029694a6d333dee25224830}
+      \strng{authorfullhash}{47a3ce48b3514c97d45fbf92a405fd82}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2024 IEEE 22nd Jubilee International Symposium on Intelligent Systems and Informatics (SISY)}
+      \field{title}{Parking Space Management and Occupancy Determination Using Artificial Intelligence}
+      \field{year}{2024}
+      \field{pages}{000375\bibrangedash 000380}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/SISY62279.2024.10737566
+      \endverb
+      \keyw{Image processing;Cameras;Real-time systems;Security;Logic;Automobiles;Intelligent systems;Informatics;Intelligent sensors;Vehicles;artificial intelligence;real time image processing;parking lot management;car park management;free parking spaces}
+    \endentry
     \entry{dataset_images}{misc}{}
       \field{sortinit}{I}
       \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
@@ -112,6 +160,44 @@
       \endverb
       \keyw{Training;YOLO;Space vehicles;Accuracy;Automated parking;Streaming media;Real-time systems;Data models;Traffic congestion;Testing;Machine Learning;CNN;YOLO;Smart Parking System (SPS);Parking lot;Image segmentation}
     \endentry
+    \entry{smart_cities}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=735ac6f3bc0c80d7719e5a1c59c7176d}{%
+           family={Mahamuni},
+           familyi={M\bibinitperiod},
+           given={Chaitanya\bibnamedelima V},
+           giveni={C\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=c83888a6f05b8832c7e1f15208654c27}{%
+           family={Sayyed},
+           familyi={S\bibinitperiod},
+           given={Zuber},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=cfa91582478d554047dd8d516aeb4766}{%
+           family={Mishra},
+           familyi={M\bibinitperiod},
+           given={Ayushi},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{98cfdf87f538527a018af81172156272}
+      \strng{fullhash}{98cfdf87f538527a018af81172156272}
+      \strng{bibnamehash}{98cfdf87f538527a018af81172156272}
+      \strng{authorbibnamehash}{98cfdf87f538527a018af81172156272}
+      \strng{authornamehash}{98cfdf87f538527a018af81172156272}
+      \strng{authorfullhash}{98cfdf87f538527a018af81172156272}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 IEEE International Power and Renewable Energy Conference (IPRECON)}
+      \field{title}{Machine Learning for Smart Cities: A Survey}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 8}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/IPRECON55716.2022.10059521
+      \endverb
+      \keyw{Deep learning;Training;Smart cities;Computational modeling;Transportation;Machine learning;Information and communication technology;Smart City;Machine Learning;Air quality;Smart Health;Smart Education;Smart Energy;Smart Transportation/Mobility}
+    \endentry
     \entry{images_original}{misc}{}
       \name{author}{1}{}{%
         {{hash=6ab380923456ce0b39a1ca1ac0b9683d}{%
@@ -137,6 +223,39 @@
       \verb{eprint}
       \verb 2107.12207
       \endverb
+    \endentry
+    \entry{real_time_transport}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=113b09f94ea94b7aee6e5dd7f16066eb}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={Neerav},
+           giveni={N\bibinitperiod}}}%
+        {{hash=8d6308ddb7baa219042c36bcfc8ef02c}{%
+           family={Garg},
+           familyi={G\bibinitperiod},
+           given={Rahul\bibnamedelima Dev},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d5e241e949c9500b6be6217edf9ac53}
+      \strng{fullhash}{2d5e241e949c9500b6be6217edf9ac53}
+      \strng{bibnamehash}{2d5e241e949c9500b6be6217edf9ac53}
+      \strng{authorbibnamehash}{2d5e241e949c9500b6be6217edf9ac53}
+      \strng{authornamehash}{2d5e241e949c9500b6be6217edf9ac53}
+      \strng{authorfullhash}{2d5e241e949c9500b6be6217edf9ac53}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 International Conference on Engineering and Emerging Technologies (ICEET)}
+      \field{title}{Real-Time Computer Vision for Transportation Safety using Deep Learning and IoT}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICEET56468.2022.10007226
+      \endverb
+      \keyw{Deep learning;Training;Computer vision;Transportation;Object detection;Solids;Real-time systems;Computer Vision;Real-time Systems;ADAS;ITS;Deep Learning}
     \endentry
     \entry{social_robotics}{inproceedings}{}
       \name{author}{4}{}{%

@@ -107,6 +107,43 @@
       \verb https://github.com/ultralytics/ultralytics
       \endverb
     \endentry
+    \entry{yolo11_overview}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=a94f326244d9ab506d3da2d9aa20e3c0}{%
+           family={Khanam},
+           familyi={K\bibinitperiod},
+           given={Rahima},
+           giveni={R\bibinitperiod}}}%
+        {{hash=506b587186b760b2f884e19c703f7ffd}{%
+           family={Hussain},
+           familyi={H\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d2c72e575a86de750b3c33375e767d9}
+      \strng{fullhash}{4d2c72e575a86de750b3c33375e767d9}
+      \strng{bibnamehash}{4d2c72e575a86de750b3c33375e767d9}
+      \strng{authorbibnamehash}{4d2c72e575a86de750b3c33375e767d9}
+      \strng{authornamehash}{4d2c72e575a86de750b3c33375e767d9}
+      \strng{authorfullhash}{4d2c72e575a86de750b3c33375e767d9}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CV}
+      \field{eprinttype}{arXiv}
+      \field{title}{YOLOv11: An Overview of the Key Architectural Enhancements}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2410.17725
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2410.17725
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2410.17725
+      \endverb
+    \endentry
     \entry{smart_parking}{inproceedings}{}
       \name{author}{6}{}{%
         {{hash=9b506584d478306a37fc7f0e94395aff}{%

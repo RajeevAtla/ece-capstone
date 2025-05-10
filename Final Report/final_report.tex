@@ -112,155 +112,225 @@ paving the way for data-driven transportation solutions on and beyond university
 
 \subsection{Dataset Prep}
 
-The foundation of this project is a diverse and robust dataset comprising parking lot images with varying occupancy levels \cite{dataset_images}, 
-\cite{images_original}. 
-The dataset includes images collected from both public sources and proprietary captures using our camera system, 
-ensuring strong relevance to real-world conditions. 
-During preprocessing, 
-resizing, 
-normalization, 
-and data augmentation techniques are applied to improve data quality and simulate various environmental scenarios such as lighting changes and occlusions. 
-Each image is carefully annotated to label parking spaces as occupied or vacant. 
-Special categories such as handicapped spots, 
-electric vehicle charging stations,
-and reserved parking spaces receive particular attention to enhance the system’s practical utility. 
-These steps result in a high-quality, 
-well-labeled dataset that supports effective model training and contributes significantly to the system’s accuracy and reliability.
+The foundation of this project lies in a diverse and robust dataset composed of parking lot images that represent a wide range of occupancy conditions. 
+This dataset is publicly accessible through the GitHub repository maintained by Kimia-CVEngineer \cite{dataset_images}, \cite{images_original}, 
+and it serves as a critical asset for the development and evaluation of our parking space detection system. 
+The dataset is extensively annotated using structured metadata that clearly identifies each individual parking space within the images and labels them according to their occupancy status—either occupied or vacant. 
+These labels are provided in a format compatible with common computer vision training pipelines, 
+enabling seamless integration with object detection frameworks such as YOLO. 
+The presence of accurate and consistent annotations eliminates the need for manual labeling and significantly accelerates the development process, 
+while also ensuring that the data used for training reflects real-world parking behaviors and layouts. 
+As such, 
+this annotated dataset offers a reliable foundation for supervised learning and model benchmarking tasks.
+
+The images included in the dataset are collected from various public sources, 
+encompassing different parking lot configurations, 
+environmental contexts, 
+and camera viewpoints. 
+This diversity is a key strength, 
+as it helps the model learn to recognize parking spaces under numerous conditions, 
+including varied lighting, 
+differing camera angles, 
+obstructions, 
+and vehicle types. 
+For example, 
+some images are taken in outdoor lots during daylight hours,
+while others may depict indoor structures with artificial lighting or nighttime scenes. 
+Additionally, 
+the dataset includes images from both compact and large-scale parking facilities, 
+capturing parallel, 
+perpendicular, 
+and diagonal parking orientations. 
+To complement this diversity and enhance the system’s applicability to our deployment environment, 
+we also integrate proprietary images captured using our own custom-built camera system. 
+These images are collected under controlled conditions that reflect the specific characteristics of the locations where the detection system is intended to operate, 
+including unique layouts, signage, 
+and vehicle patterns. 
+By combining public and proprietary data, 
+we create a hybrid dataset that is both comprehensive and contextually relevant, 
+improving the model’s ability to generalize and adapt to real-world conditions.
+
+To prepare the dataset for use in training and inference, 
+we apply a series of preprocessing steps designed to standardize and enhance the input images. 
+First, 
+each image is resized to a fixed resolution compatible with the requirements of the neural network architecture. 
+This ensures uniformity in input dimensions and reduces computational load during training. 
+Next, 
+pixel intensity normalization is performed to bring all image values into a common range, 
+which helps stabilize gradient descent during backpropagation and leads to faster convergence. 
+In addition to these standard steps, 
+we employ a range of data augmentation techniques that artificially expand the size and diversity of the dataset.
+These include horizontal and vertical flipping, 
+brightness and contrast adjustments, 
+random cropping, 
+rotation, 
+scaling, 
+and the addition of noise or simulated occlusions. 
+Such augmentations are essential for improving the model’s robustness to real-world variations such as changes in weather or time of day. 
+Collectively, 
+the preprocessing pipeline enhances both the quality and diversity of the data, 
+ensuring that the model is trained on images that reflect the full range of conditions it may encounter during actual deployment.
 
 \subsection{ML Model}
 
+This project leverages the YOLOv11 
+(You Only Look Once) 
+object detection algorithm \cite{yolo11_ultralytics}
+as the core of its parking space detection system. 
+YOLOv11 represents a cutting-edge evolution of the YOLO architecture, 
+offering a powerful balance between detection accuracy and computational efficiency. 
+It is particularly well-suited for real-time applications such as intelligent transportation systems and smart parking solutions, 
+where rapid inference and minimal latency are essential. 
+YOLOv11 introduces enhancements over previous versions, 
+including improved anchor-free object detection, 
+better spatial understanding through transformer-based modules, 
+and a more efficient feature pyramid network for multi-scale detection \cite{yolo11_overview}. 
+These improvements make it capable of accurately identifying both small and large objects within cluttered scenes, 
+which is crucial when detecting parked vehicles that may appear at different scales and levels of visibility within a single image.
 
-
-This project leverages the YOLOv11 (You Only Look Once) 
-computer vision algorithm \cite{yolo11_ultralytics} 
-to address the task of parking space detection. 
-Known for its speed and accuracy, 
-YOLOv11 is well-suited for real-time applications, 
-especially on resource-constrained platforms. 
-The model undergoes customization and fine-tuning to tackle the specific challenges of parking detection, 
-including variations in vehicle size, 
-overlapping boundaries, 
-and partial occlusions from objects or shadows. 
-Advanced image processing techniques are integrated to maintain detection reliability under diverse weather conditions and inconsistent image quality. 
-Training focuses on maximizing accuracy while reducing computational load to enable smooth operation on low-power devices like the Raspberry Pi. 
-Techniques such as quantization and pruning help reduce model complexity without sacrificing performance. 
-Rigorous testing and validation ensure the model performs robustly across a range of environments. 
-The annotated datasets developed earlier in the project are used to evaluate and refine the model, 
-improving its real-time accuracy and effectiveness.
+To tailor YOLOv11 for the specific challenges of parking space detection, the model is extensively fine-tuned using the annotated dataset \cite{dataset_images}
+described earlier. 
+This fine-tuning process addresses key domain-specific issues such as variability in vehicle types, 
+differing parking layouts, 
+and complex visual obstructions. 
+For instance, vehicles may partially extend outside parking boundaries, 
+be parked at awkward angles, 
+or be obscured by environmental factors such as shadows, 
+rain, 
+or nearby foliage. 
+The training pipeline integrates advanced image processing techniques to maintain detection reliability across such diverse scenarios including,
+contrast normalization, 
+histogram equalization, 
+and dynamic augmentation based on weather or lighting conditions. 
+These steps enhance the model’s resilience in real-world settings.
 
 \subsection{Hardware}
 
-Selecting the Raspberry Pi 5 and a compatible camera module plays a key role in the success of this project. The Raspberry Pi 5 provides the necessary processing power and connectivity to support smooth, stable operation of the machine learning model without outages or connection issues. A secure mounting system ensures the camera remains in a fixed position, producing consistent image captures critical for accurate detection. The testing phase evaluates the system’s hardware stability, image quality, and model performance across a variety of parking lot layouts. Extensive field testing helps fine-tune the integration and optimize the system for real-world deployment. In cases where the Raspberry Pi 5 cannot handle full model inference locally due to computational limits, the system is configured to offload processing to an external computer. In such setups, the Raspberry Pi 5 transmits images over Wi-Fi or Ethernet, maintaining its role as the edge capture and communication device.
+Selecting the Raspberry Pi 5 and a compatible camera module plays a key role in the success of this project. 
+The Raspberry Pi 5 provides the necessary processing power and connectivity to support smooth, 
+stable operation of the machine learning model without outages or connection issues. 
+A secure mounting system ensures the camera remains in a fixed position, 
+producing consistent image captures critical for accurate detection. 
+The testing phase evaluates the system’s hardware stability, 
+image quality, 
+and model performance across various parking lot layouts. 
+Extensive field testing helps fine-tune the integration and optimize the system for real-world deployment. 
+In cases where the Raspberry Pi 5 cannot handle full model inference locally due to computational limits, 
+the system is configured to offload processing to an external computer. 
+In such setups, 
+the Raspberry Pi 5 transmits images over Wi-Fi or Ethernet, 
+maintaining its role as the edge capture and communication device.
 
 \subsection{Software}
-The software component of the system integrates advanced image processing, machine learning, and user-facing features to deliver a complete parking detection solution. Captured images are first processed through steps such as noise reduction, color correction, and enhancement to ensure high-quality inputs for the trained model. The inference pipeline uses the YOLOv11 model to detect and classify parking spaces in real time with high accuracy and low latency. Data transmission is handled through reliable communication protocols such as Wi-Fi or cellular networks, enabling seamless integration with either a central server or a mobile application.
 
-The web application functions as the primary interface for users, displaying real-time parking availability through interactive maps, search tools, and live notifications. Available parking spots are clearly highlighted, helping users quickly identify open spaces in specific lots. The processed outputs from the machine learning model are sent to the app’s backend, which then updates the front-end user interface with up-to-date parking status. Special attention is given to creating an intuitive and responsive design that works across a range of devices and user preferences, ensuring the system is accessible and practical for everyday use.
+The software component of the system integrates advanced image processing, 
+machine learning, 
+and user-facing features to deliver a complete and user-friendly parking detection solution. 
+When the camera system captures images, 
+they first pass through a series of preprocessing steps designed to optimize visual quality. 
+These steps include noise reduction to eliminate unwanted artifacts, 
+color correction to maintain visual consistency across various lighting conditions, 
+and general image enhancement to bring out features relevant to the model’s analysis. 
+These refinements ensure that the inputs fed into the trained model are clean, 
+well-structured, 
+and highly representative of real-world scenes, 
+thereby boosting detection reliability. 
+Once the images have been preprocessed, 
+they are passed through the inference pipeline, 
+which utilizes the YOLOv11 model to detect and classify parking spaces in real time. 
+The system is designed to deliver results with minimal delay, 
+ensuring that parking availability data remains accurate and actionable. 
+The system relies on robust data transmission protocols such as Wi-Fi or cellular networks, 
+allowing it to connect with central servers or user devices without interruption. 
+This seamless flow of information is essential for maintaining synchronization between edge devices and the broader application ecosystem.
 
+The web application serves as the central user interface, 
+providing a visually rich and interactive experience for users needing real-time parking availability updates. 
+The application is designed to be functional and easy to navigate, 
+with tools allowing users to view parking lots in map format, 
+search for specific locations, 
+and receive live notifications when spaces become available. 
+Available parking spots are clearly marked and visually distinguished, 
+helping users identify open spaces quickly and without confusion. 
+This clear visual feedback reduces the time spent searching for parking and enhances overall user satisfaction. 
+The system is built so that the outputs from the machine learning model are efficiently transmitted to the app’s backend, 
+where they are interpreted and converted into meaningful updates. 
+These updates are then displayed on the front-end interface in near real time, 
+ensuring that users always have access to the most current parking status. 
+The application strongly emphasizes user experience by incorporating a responsive design that functions smoothly across smartphones, 
+tablets, 
+and desktops. 
+This ensures that users can access the system wherever they are, 
+using the most convenient device, making the solution practical and accessible for daily use in a wide variety of scenarios.
 
 \section{Challenges}
-Throughout the development of our project, 
-we encountered several significant challenges related to regulation and the supply chain, 
-which ultimately limited the performance and scope of our system. 
-Initially, 
-the project was designed to utilize an aerial camera perspective, 
-similar to the dataset images 
-(see Figure \ref{fig:fig4}), 
-in order to accurately capture parking lines and define bounding boxes around each space. 
-However, 
-due to regulatory constraints from Rutgers University and the State of New Jersey, 
-we were not permitted to install cameras on elevated platforms or drones as originally planned. 
-As a result, 
-we had to revise our approach and instead placed a stationary camera on the 5th floor of the CoRE building. 
-This new vantage point introduced several visibility issues, 
-as many parking spots were blocked by vehicles already parked in front of them, 
-reducing the clarity and reliability of our input images. 
 
-In addition to these regulatory limitations, 
-we also faced delays in receiving essential hardware components. 
-The camera's power supply and SD card arrived late in the semester, 
-preventing us from fully setting up and testing the system on-site. 
-This significantly limited our ability to collect real-world data from the intended parking lot, 
-which in turn negatively impacted the accuracy and effectiveness of our trained model. 
-The power supply and SD card arriving late has significantly impacted the ability to continue building the system pipeline. 
-The goal was to have the camera take a continuous video, 
-house the YOLOv11 model on the Raspberry Pi itself for local computing, 
-take images at regular intervals with bounding boxers overlayed, 
-send images to a database, 
-pull the information from these images, 
-and update a website with this information. 
-Our development timeline has been dramatically affected by these issues.
+Throughout the development of our project, we encountered several significant challenges related to regulation and the supply chain, which ultimately limited the performance, timeline, and scope of our system. From the outset, our team had a clear and ambitious vision for how the system would function, with specific technical goals and hardware placements in mind. One of the key foundational elements of our original design was the use of an aerial camera perspective. This choice was heavily informed by the dataset images we trained on (see Figure 4), which provided a high-angle view that clearly delineated parking lines and allowed bounding boxes to be easily drawn around each space. These images offered the ideal conditions for our machine learning model to perform effectively, as the clear view from above minimized visual obstructions and provided a consistent and comprehensive layout of the parking area.
 
-Particularly on the software end of the project, 
-the delay in receiving the hardware components needed to execute our project has drastically changed the way our database is being updated. 
-The output of our ML model program needs to be used to update the database, 
-but due to not having access to the power supply and SD card to fully test the system, 
-we had to develop a workaround method for simply getting real data from the parking lot. 
-The workaround we resorted to was using our phone cameras, 
-which resulted in some limitations compared to what was originally envisioned such as lower quality resolution, 
-and inconsistent frame rates of mobile devices. 
-This made it harder for the ML algorithm to detect vacant or occupied parking spaces, 
-which can result in missed or incorrect detections affecting the output file of the ML algorithm after running it and using the updated CSV file to update the database. 
-These inaccuracies propagated through the pipeline resulting in a few false positives, 
-resulting in a few incorrect entries into the database. 
+However, despite the clarity of our technical vision, we were soon faced with unforeseen regulatory constraints imposed by Rutgers University and the State of New Jersey. These regulations prohibited the installation of cameras on elevated platforms or the use of drones, which had been central to our original plan. The restrictions were rooted in concerns related to safety, privacy, and compliance with institutional and state policies, all of which were beyond our control. As a result, our team was forced to reevaluate and revise our approach in order to comply with these constraints. Ultimately, we decided to place a stationary camera on the 5th floor of the CoRE building, which provided a fixed perspective of the parking lot. While this solution allowed us to move forward with implementation, it introduced a new set of challenges. Unlike the clean, overhead view provided by aerial imagery, the 5th-floor angle from the CoRE building resulted in partial obstructions, as many parking spots were blocked by larger vehicles parked in front of them. This significantly reduced the visibility and clarity of the images captured, which in turn affected the reliability of the inputs fed into our machine learning model.
 
-Another problem that was encountered was when trying to optimize the refresh rate for database stability and accuracy. 
-Initially our system was trying to update the database every 5 to 10 seconds from reading the CSV file, 
-but this had several implications such as the database locking, 
-writing conflicts, 
-and also occasional crashes when running the server for frontend requests. 
-In order to solve this the refresh interval was increased to 30 seconds to avoid instability in the database system. 
-This eased the load on the database, 
-kept the access conflicts with the frontend requests to a minimal amount, 
-and allowed the ML model more time to process images and get higher quality outputs closer to the real-time scenario. 
-Overall, 
-this more refined approach allowed for a more sustainable balance between the backend functionality of the system and the real-time data generated by the ML model.
+Compounding these challenges were supply chain issues that further disrupted our timeline. Several essential hardware components, specifically the camera’s power supply and SD card, arrived later than expected, near the end of the semester, despite having been ordered well in advance. These delays significantly hindered our ability to set up the system in the intended on-site environment. Without these components, we were unable to fully configure and test the camera on location, meaning we had limited access to real-world data from our designated parking lot. The inability to collect this crucial data during key stages of development had a direct impact on the training and performance of our machine learning model. The model's accuracy and effectiveness depend heavily on being trained and tested with consistent, high-quality inputs from the actual deployment environment, and unfortunately, this was not possible within our original timeframe.
+
+The late arrival of these components had a cascading effect on the rest of the project. Our goal had been to build a fully integrated system where the camera would capture continuous video, the YOLOv11 model would be deployed on a Raspberry Pi for local inference, images with bounding boxes would be stored and analyzed, and relevant data would be pushed to a database. This database would then be used to update a user-facing website, providing real-time insights into parking availability. However, due to the absence of the camera’s power supply and SD card for a substantial portion of the semester, our ability to test and refine this pipeline in a real-world setting was severely limited.
+
+On the software side of the project, the absence of working hardware meant we had to implement a temporary workaround in order to continue development. To simulate the camera input, we resorted to using our mobile phones to capture footage of the parking lot. While this allowed us to collect some data and test portions of the pipeline, it came with significant drawbacks. The mobile phone footage lacked the consistency and quality of a dedicated surveillance camera. Differences in resolution, unstable frame rates, and varying lighting conditions made it difficult for the machine learning algorithm to perform as effectively as it could under ideal conditions. This inconsistency resulted in lower confidence detections, and occasionally, the algorithm would miss or mislabel parking spaces as occupied or vacant. These inaccuracies, in turn, led to flawed outputs in the resulting CSV file, which was then used to update the database. As a consequence, some false positives and incorrect entries were introduced, affecting the overall reliability of the system.
+
+In addition to data quality issues, another complication we encountered involved optimizing how frequently the database should be updated. Initially, our system was configured to update the database every 5 to 10 seconds based on new outputs from the CSV file. While this approach aimed to provide near real-time data, it soon became apparent that such a high refresh rate introduced several unintended consequences. The backend system began to experience database locking issues and writing conflicts. Occasionally, the server would even crash when attempting to process simultaneous requests from the frontend. These performance bottlenecks were disruptive and made it difficult to maintain a stable and functional platform for users. To address this, we adjusted the refresh interval to 30 seconds, which significantly improved system stability. With more time between updates, the backend had the breathing room it needed to process images more thoroughly, reduce conflicts with frontend requests, and generate more accurate outputs. While this slightly reduced the immediacy of updates, it offered a more sustainable and reliable approach to system performance, balancing the need for timely information with technical feasibility.
+
+In summary, while the project faced several unforeseen setbacks, including regulatory restrictions and delays in hardware delivery, we adapted our approach and found creative workarounds to continue progress. These experiences taught us valuable lessons in project management, systems integration, and real-world deployment challenges. Although the final implementation did not fully match our original plan, the modified system still demonstrated a functional and practical solution for detecting and reporting parking availability, an accomplishment made more meaningful by the hurdles we overcame along the way.
+
 
 \section{Results}
 
 During the model training phase, 
-a fine-tuning strategy was employed due to the absence of prior knowledge regarding the optimal number of training epochs. 
-This approach involved training the model for a fixed number of epochs to obtain an initial set of weights. 
-These weights were then used to initialize the model for subsequent training cycles, 
-effectively serving as a foundation for further refinement. 
-This iterative weight generation and retraining process was repeated across multiple rounds, 
-allowing for gradual performance improvements while mitigating the risk of overfitting or underfitting.
+a fine-tuning strategy was adopted to navigate the uncertainty surrounding the optimal number of training epochs. 
+Without explicit prior knowledge about when the model would converge to its best performance, 
+we implemented a staged training process designed to refine the model's performance iteratively. 
+Initially, 
+the model was trained for a predetermined number of epochs to generate a foundational set of weights. 
+These weights were then preserved and used to reinitialize the model for additional training cycles. 
+By doing so, 
+we allowed the model to build upon previously learned features and patterns, 
+gradually improving its detection capability with each iteration. 
+This stepwise refinement enabled us to more effectively balance the trade-off between underfitting, 
+where the model fails to capture the complexity of the data, 
+and overfitting, 
+where the model becomes overly tailored to the training set and loses generalization ability.
 
-We begin by analyzing the training and validation loss curves to evaluate the learning behavior of the model throughout the training process. 
-These plots provide insight into the model’s convergence and potential overfitting or underfitting tendencies.
+Throughout this multi-stage training process, 
+close attention was paid to key performance indicators, 
+particularly the training and validation loss values. 
+After each training cycle, 
+the loss curves were carefully analyzed to assess the model's learning dynamics and convergence behavior. 
+These plots serve as critical diagnostic tools, 
+offering valuable insight into whether the model is continuing to improve, 
+plateauing, 
+or beginning to overfit. 
+A steady decline in training and validation loss typically suggests that the model is learning effectively, 
+whereas divergence between the two can indicate overfitting or poor generalization. 
+By evaluating these trends at every stage, 
+we were could make informed decisions about whether to continue training, 
+adjust hyperparameters, 
+or modify the dataset through augmentation or filtering.
+
+This analytical approach provided a strong empirical foundation for guiding the model’s development, 
+allowing for incremental yet meaningful improvements in performance. 
+It also ensured that the final model was accurate in terms of detection metrics and stable and reliable across various testing scenarios. 
+The insights gained from loss curve evaluations were instrumental in achieving a well-balanced model capable of generalizing to new, 
+unseen parking lot images, 
+further validating the effectiveness of the training methodology.
+
 
 \subsection{Training Loss}
 
-Figure \ref{fig:fig1} illustrates the progression of the training loss throughout the training process. 
-During the early epochs,
-the training loss exhibits fluctuations as the optimizer begins to interact with the training data. 
-These fluctuations indicate the optimization process adjusting to the model’s parameters and gradually improving the model's ability to minimize the loss. 
-In the subsequent epochs,
-the loss shows a steady decrease, 
-demonstrating that the model is learning from the data and the optimizer is refining its parameters effectively.
+Figure \ref{fig:fig1} illustrates the progression of the training loss throughout the training process, offering a visual representation of how the model’s performance evolved over time. During the initial training epochs, the training loss displays noticeable fluctuations as the optimizer begins interacting with the data and adapting to the model’s initial parameter values. These fluctuations are a normal part of the learning process and reflect the model's early attempts to make sense of complex patterns in the training dataset. As the optimizer updates the weights based on feedback from the loss function, the model begins to adjust its internal representations and gradually learns to minimize the loss. This early instability signals the beginning of meaningful learning, during which the model makes rapid strides in performance.
 
-The large fluctuations occur near the start of training, 
-indicating a high learning rate near the start. 
-The loss decreases drastically during this time. 
-As the training progresses, 
-the loss curve begins to plateau after around 750-800 epochs, 
-with the loss stabilizing at approximately 0.6. 
-This plateau indicates that the model is nearing convergence, 
-meaning that the learning process is reaching a point where improvements are marginal, 
-and the model's parameters have largely stabilized. 
-The slight oscillations in the plot, 
-particularly the ''spikes,'' 
-correspond to moments of fine-tuning, 
-where the optimizer undergoes specific adjustments to the model's weights. 
-These fluctuations are expected, 
-as fine-tuning allows for more nuanced adjustments, 
-enhancing the model’s performance while avoiding drastic shifts in the learned parameters.
+The larger fluctuations observed during the early stages of training suggest that the model was learning quickly, likely due to a relatively high learning rate at the outset. These steep declines in the loss value indicate that the model effectively captured general trends in the data and made substantial progress toward better accuracy. A noticeable shift occurs: the loss curve stabilizes and follows a smoother downward trend. Around epochs 750 to 800, the curve enters a plateau phase, where the loss levels off and remains relatively constant at approximately 0.6. This leveling out suggests that the model is approaching convergence. At this stage, it becomes increasingly difficult for the optimizer to make large improvements, as the model’s parameters have settled into configurations that yield consistent performance on the training data.
 
-The consistent rise and fall of the loss during these fine-tuning periods reflects the adaptive nature of the training process. 
-Notably, 
-each fine-tuning cycle results in the loss ultimately decreasing to a lower value than the previous cycle, 
-demonstrating effective model refinement. 
-The general trend of the training loss decreasing over time and ultimately plateauing reinforces the model's capacity to converge toward an optimal solution.
+The slight oscillations that appear during this plateau phase, often visualized as small “spikes” in the loss curve, correspond to moments of fine-tuning. These subtle fluctuations indicate ongoing adjustments by the optimizer to refine the model’s internal weights without causing significant disruptions to previously learned representations. These fine-tuning periods key to the training strategy, allowing the model to make small, targeted improvements. Rather than undergoing large-scale changes, the model adjusts incrementally, sharpening its understanding of nuanced patterns in the data. These spikes are expected and indicate that the training process is still active, albeit in a more refined and controlled phase.
+
+The consistent rise and fall of the loss during each fine-tuning cycle highlights the adaptive and iterative nature of the training process. Importantly, each successive cycle results in a slightly lower final loss, demonstrating that these adjustments are successfully enhance the model’s accuracy. This pattern shows that the training strategy is effective in preventing overfitting and actively guiding the model toward better performance. Overall, the steady downward trend and eventual stabilization of the training loss reinforce the conclusion that the model is capable of learning efficiently and converging toward an optimal set of parameters suitable for parking space detection.
+
 
 \begin{figure}[h]
     \centering
@@ -274,38 +344,11 @@ The general trend of the training loss decreasing over time and ultimately plate
 
 \subsection{Validation Loss}
 
-Figure \ref{fig:fig2} shows the progression of the validation loss throughout the training process. 
-Initially, 
-the validation loss decreases steadily, 
-mirroring the trend observed in the training loss. 
-However, 
-as training continues, 
-the rate of improvement slows, 
-and the loss begins to plateau around 750-800 epochs. 
-This plateau suggests that the model is reaching a point of diminishing returns, 
-where further training would yield only marginal improvements in validation performance. 
-The model’s ability to generalize to unseen data stabilizes, 
-indicating that it has learned the underlying patterns effectively without overfitting.
+Figure \ref{fig:fig2} illustrates the progression of the validation loss throughout the training process, providing insight into how well the model performs on unseen data over time. In the initial stages of training, the validation loss decreases at a steady and consistent rate, closely mirroring the behavior observed in the training loss curve. This early improvement suggests that the model is not only fitting the training data but is also successfully capturing generalizable patterns that apply beyond the specific examples it has seen. As training progresses, however, the rate of improvement gradually slows. Around epochs 750 to 800, the validation loss begins to level off, forming a plateau that signals the model is reaching a point of diminishing returns. This flattening of the curve suggests that further training would result in only marginal gains and that the model’s performance has largely stabilized regarding its generalization ability.
 
-The presence of spikes in the validation loss plot is similar to those in the training loss. 
-These fluctuations correspond to periods of fine-tuning, 
-where the optimizer makes targeted adjustments to the model’s weights. 
-Fine-tuning helps refine the model's performance, 
-ensuring it is better equipped to generalize to unseen data. 
-These minor increases in validation loss reflect the optimizer's effort to fine-tune the learned parameters, 
-balancing between exploration and exploitation of the parameter space. 
-While these fluctuations are visible, 
-they do not significantly detract from the overall downward trend of the validation loss.
+Similar to the training loss, the validation loss curve also features small spikes and fluctuations, which are particularly noticeable during the plateau phase. These momentary increases in loss correspond to intervals of fine-tuning, where the optimizer continues to make subtle adjustments to the model's parameters in pursuit of better generalization. Although these fluctuations may appear as temporary setbacks, they are part of a normal and beneficial process that helps the model refine its internal representations. These slight variations reflect the dynamic nature of learning, where the optimizer carefully balances stability with the need to explore the parameter space for further improvements. Notably, the overall trajectory of the validation loss remains downward or stable, indicating that the model is not overreacting to individual data points and is maintaining its focus on broader generalization.
 
-The plateau observed after 750-800 epochs indicates that the model has achieved stability in its learning. 
-At this stage, 
-continuing training would likely lead to overfitting, 
-where the model’s performance on the validation set would begin to degrade. 
-Therefore, 
-the training was halted at this point to avoid overfitting and ensure that the model maintained its generalization capability. 
-The validation loss plot highlights the effectiveness of this strategy, 
-demonstrating that the model achieved its optimal performance without unnecessary overtraining.
-
+The clear plateau in validation loss observed after approximately 750 to 800 epochs marks an important transition in the training process. The model has reached a stable state where continued training could potentially lead to overfitting, as additional adjustments may begin to tailor the model too closely to the training data at the expense of performance on unseen inputs. Recognizing this, the decision was made to halt training at this point in order to preserve the model’s generalization capability. The behavior shown in the validation loss curve confirms the success of this approach, as it demonstrates that the model was able to reach optimal performance without excessive training. Overall, the validation loss trend supports the conclusion that the training process was well-controlled and effective in producing a robust and generalizable model.
 
 
 \begin{figure}[h]
@@ -322,38 +365,15 @@ demonstrating that the model achieved its optimal performance without unnecessar
 
 \subsection{Evaluation}
 
-Figure \ref{fig:fig3} presents the evolution of the four evaluation metrics: 
-Precision (P), 
-Recall (R), 
-mAP50 (Mean Average Precision), 
-and mAP50-95. 
-As shown, 
-the values of all four metrics consistently increase over the course of training, 
-indicating improvements in the model’s performance as it learns from more data. 
-Precision steadily rises, 
-reaching a final value of approximately 0.87, 
-reflecting the model's growing accuracy in detecting objects. 
-Recall increases as well, 
-reaching around 0.80, 
-suggesting that the model is becoming better at identifying all instances of objects in the images. 
-Both mean average precision (mAP)
-metrics demonstrate a similar upward trend, 
-with mAP50 finishing at about 0.90 and mAP50-95 concluding at 0.72. 
-These scores indicate improvements in the model's accuracy across different levels of detection difficulty and at various IoU thresholds \cite{yolo11_ultralytics}.
+Figure \ref{fig:fig3} presents a comprehensive view of the evolution of the four key evaluation metrics used to assess the performance of our object detection model throughout the training process: Precision (P), Recall (R), mAP50 (Mean Average Precision at 50\% IoU threshold), and mAP50-95 (Mean Average Precision averaged across multiple IoU thresholds). As illustrated in the figure, the values of all four metrics show a consistent upward trajectory over time, indicating that the model is learning effectively from the training data and gradually improving its ability to detect objects accurately.
 
-The occasional spikes in the evaluation metrics are consistent with the fine-tuning process, 
-as observed in the training and validation loss plots. 
-These fluctuations represent moments when the optimizer adjusts the model’s weights, 
-leading to short-term increases in performance before stabilizing again. 
-Despite these minor oscillations, 
-the overall trajectory of the metrics is clear: 
-the model becomes more accurate and better able to generalize over time, 
-as evidenced by the steady improvement across all four metrics.
+Precision, which measures the accuracy of the model’s positive predictions, exhibits a steady and promising increase throughout training. By the end of the process, it reaches a final value of approximately 0.87. This strong result reflects the model's growing capability to identify true positive detections while minimizing false positives correctly. In other words, when the model predicts that an object is present in a given location, it is increasingly likely to be correct. This is an essential quality in any object detection system, particularly one deployed in real-world environments where high accuracy is critical.
 
-These results are crucial for evaluating the model’s ability to perform object detection effectively. 
-The improvements in precision and recall suggest that the model is not only becoming more accurate in its detections but is also identifying a larger proportion of the objects in the images. 
-The increasing mAP scores further reinforce this, 
-indicating that the model is refining its detection capabilities and performing well across various detection scenarios.
+Recall, another vital metric, measures the proportion of actual positive cases the model successfully identifies. This metric also shows a consistent upward trend, ultimately reaching around 0.80. This increase demonstrates the model’s growing ability to identify a larger share of objects in the images. Practically, this means fewer objects are being missed as training progresses. Together, the increases in both precision and recall highlight the model’s balanced improvement in detecting objects accurately and comprehensively.
+
+The two mAP metrics, mAP50 and mAP50-95, further reinforce the overall progress the model is making. These metrics are widely recognized as robust indicators of object detection performance, accounting for precision and recall across various detection thresholds. The mAP50 metric, which is generally considered the baseline for object detection accuracy, climbs steadily to finish at approximately 0.90. This high score reflects the model’s strong performance in detecting objects with reasonable spatial accuracy. Meanwhile, the mAP50-95 metric, which is more stringent due to its requirement for accuracy across a range of Intersection over Union (IoU) thresholds, concludes at a solid 0.72. This result indicates that the model is effective in general and increasingly capable of handling more challenging detection scenarios that demand greater precision in localization.
+
+
 
 \begin{figure}[h]
     \centering
@@ -374,7 +394,7 @@ and 3 showcase the quantitative performance data of the machine learning model a
 By examining these plots, 
 we can assess how the model's performance evolves over time, 
 identify potential weaknesses or areas for improvement, 
-and determine its ability to generalize to unseen data. 
+and determine its ability to unseen data. 
 Additionally, 
 the plots reveal trends in the model's learning process, 
 such as whether it is overfitting or underfitting. 
@@ -384,29 +404,16 @@ ensuring that the model meets the desired standards for accuracy and reliability
 
 \subsection{Test Examples}
 
-In Figure \ref{fig:fig4}, 
-a test image from the dataset is presented with bounding boxes overlaid to indicate detected objects. 
-Empty parking spaces are highlighted with green bounding boxes, 
-while occupied spaces are marked with red. 
-The YOLOv11 model successfully identifies and classifies parking spaces in this test image, 
-demonstrating the model's ability to classify spaces in relative proximity.
+In Figure \ref{fig:fig4}, we present a test image from the dataset with bounding boxes overlaid to illustrate the model’s detection results. In this visual example, empty parking spaces are highlighted with green bounding boxes, signaling areas available for parking. In contrast, occupied spaces are marked in red to indicate that they are currently taken. The image clearly represents the YOLOv11 model’s ability to effectively distinguish between different types of parking space occupancy based on visual cues from the input data. The bounding boxes are cleanly aligned with the spaces in view, demonstrating the model’s detection accuracy and its consistency in classifying multiple parking spaces that are relatively close to the camera's position. This example captures one of the strengths of our system, its ability to provide quick and reliable visual outputs when the camera angle, resolution, and visibility conditions are favorable.
 
-However, 
-as seen in Figure \ref{fig:fig5}, 
-the model encounters challenges when objects are further away, 
-particularly with identifying vehicles and parking spaces at a distance. 
-This limitation arises from the model's struggle to accurately detect and classify objects farther from the camera, 
-likely due to the reduced resolution of distant objects and the difficulty distinguishing fine details at greater distances. 
-The frame shown in Figure \ref{fig:fig5} is from a test video, 
-where this issue impacts the model’s performance.
+However, a contrasting scenario is presented in Figure \ref{fig:fig5}, where the model's limitations become more apparent. In this frame, which is taken from a test video rather than a static image, the camera captures a much wider field of view, including objects and parking spaces significantly farther from its position. In this case, the model encounters noticeable challenges in identifying and accurately classifying objects at greater distances. Vehicles and parking spaces that are further away appear smaller and less distinct, making it harder for the model to process them with the same level of accuracy as those closer to the camera. If present at all, the bounding boxes in this image are either misaligned or missing, indicating a drop in detection performance when resolution and visibility are compromised by distance.
 
-The difficulty in detecting distant objects suggests that parking lots with large or irregular layouts will require multiple cameras to ensure complete coverage. 
-By placing cameras strategically throughout the lot, 
-it will be possible to mitigate the model's struggles with distant detections, 
-ensuring that all parking spaces, 
-both near and far, 
-are adequately monitored and classified. 
-This approach will improve the system's overall accuracy and ensure more reliable performance across a broader area.
+This issue is common in real-world object detection systems, especially when working with large outdoor environments like parking lots, where the spacing between objects can vary greatly. As objects become more distant, they lose visual clarity, which reduces the amount of information available for the model to analyze. This diminished detail makes it difficult for the model to detect fine features, such as the outlines of a parking space or the shape of a vehicle, which are crucial for accurate classification. The test video frame in Figure 5 is a compelling example of this challenge and highlights the importance of strategic design considerations in system deployment.
+
+Given this limitation, it becomes evident that relying on a single fixed camera, especially one positioned at a distance or high elevation, may not be sufficient to ensure complete and reliable coverage of an entire parking lot. This is especially true in lots with expansive layouts, multiple sections, or irregular configurations that introduce blind spots or areas of low visibility. To address this, one of the most practical solutions is to deploy multiple cameras at strategic points throughout the lot. By doing so, each section of the parking area can be monitored more closely and with greater resolution, helping to overcome the issues introduced by distance. With overlapping fields of view, these cameras can collectively provide comprehensive coverage and reduce the chances of missed or misclassified spaces.
+
+Implementing a multi-camera approach improves the system’s spatial reach and enhances its reliability in varying lighting and environmental conditions. It allows the model to operate with clearer, more focused input images and helps ensure that detections remain consistent across the entire monitored area. In the context of our project, adopting such a configuration would be a meaningful step toward increasing the robustness and accuracy of the system, particularly in real-world applications where full situational awareness is essential.
+
 
 \begin{figure}[h]
     \centering
@@ -436,61 +443,25 @@ or system.
 It can encompass user experiences or feedback regarding the ease of navigation within the parking lot, 
 the availability of parking spaces during peak hours, 
 or the overall safety and accessibility of the facility. 
-Qualitative data is often subjective and focuses on the attributes or features that can't be easily quantified but provide essential insights for improving the user experience, 
+Qualitative data is often subjective and focuses on the attributes or features that cannot be easily quantified but provide essential insights for improving the user experience, 
 operational efficiency, 
 and service quality. 
 Figure 5 provides a visual example of the model working and finding open and closed parking spaces.
 
 \section{Cost/Sustainability analysis}
 
-This project involves the development of a smart parking space detection system using a Raspberry Pi 5 (8GB) and a tilt-enabled camera setup. 
-The system identifies empty and occupied parking spots to optimize parking efficiency and reduce time spent by drivers searching for available spaces. 
-The prototype cost is approximately \$196.66, 
-which includes the Raspberry Pi (\$80), 
-tilt camera module (\$86.71), 
-power supply (\$12), 
-bumper (\$3), 
-and a 64GB SD card (\$14.95). 
-The estimated cost for mass production is approximately \$200 per unit, 
-reflecting a cost-effective solution even at scale, 
-especially considering the modularity and wide availability of its components.
+This project involves developing an intelligent parking space detection system using a Raspberry Pi 5 (8GB) and a tilt-enabled camera setup. The system identifies empty and occupied parking spots to optimize parking efficiency and reduce time spent by drivers searching for available spaces. The prototype cost is approximately \$196.66, which includes the Raspberry Pi (\$80), tilt camera module (\$86.71), power supply (\$12), bumper (\$3), and a 64GB SD card (\$14.95). The estimated cost for mass production is approximately \$200 per unit, reflecting a cost-effective solution even at scale, especially considering its components' modularity and wide availability.
 
-Economically, 
-the project is designed with affordability and scalability in mind. 
-If deployed across large parking structures or citywide networks, 
-further cost optimizations could be achieved through bulk procurement or centralized processing to reduce the need for one Raspberry Pi per camera. 
-The system’s energy-efficient design also contributes to lower long-term operational costs, 
-and potential tax incentives for smart city infrastructure, 
-carbon footprint reduction, 
-and energy-efficient technologies may reduce implementation expenses. 
-Additionally, 
-the system may provide indirect cost savings by lowering vehicle idling time, 
-reducing fuel consumption, 
-and minimizing emissions due to inefficient parking behaviors.
+Economically, the project is designed with affordability and scalability in mind, making it a practical option for cities, private parking operators, and businesses seeking to modernize their infrastructure without incurring excessive expenses. The modest per-unit cost makes this system attractive, particularly when considering its long-term value. As demand increases, economies of scale could bring the production price down further, primarily through bulk purchasing agreements or partnerships with hardware vendors. Additionally, centralized data processing or cloud-based platforms could reduce the need for each camera to have its dedicated Raspberry Pi, further cutting down hardware and maintenance expenses. The overall system is structured to offer excellent value, with a low initial investment and reduced long-term costs thanks to its energy-efficient operation and minimal upkeep requirements.
 
-Environmentally, 
-the system contributes positively by reducing greenhouse gas emissions associated with drivers circling to find parking. 
-The hardware components, 
-such as the Raspberry Pi, 
-have a low power footprint and can operate efficiently with minimal energy consumption. 
-Furthermore, 
-the use of commonly available and recyclable materials supports a sustainable product lifecycle. 
-As the system minimizes unnecessary vehicle movement, 
-it indirectly reduces urban traffic congestion and resource overuse.
+Moreover, municipalities or organizations adopting this system may be eligible for government incentives to promote smart infrastructure and sustainable city initiatives. These may include grants, rebates, or tax breaks, especially in areas focused on lowering carbon emissions or deploying energy-efficient technologies. These financial advantages can make a significant difference in large-scale implementations, where tight budgets and return on investment are closely scrutinized. Beyond direct savings, the project also introduces indirect economic benefits. Minimizing the time drivers spend idling or circling in search of parking helps reduce fuel consumption and vehicle wear and tear, which translates into savings for individual drivers and reduced strain on urban roadways. Businesses in high-traffic areas may also benefit, as improved parking availability can increase foot traffic and customer satisfaction.
 
-Socially, 
-the impact of the project is notable in its ability to improve urban mobility, 
-reduce driver frustration, 
-and promote smarter city planning. 
-By streamlining the parking process, 
-it increases accessibility for all, 
-including the elderly and those with disabilities, 
-and reduces stress in high-traffic zones. 
-While partial automation may reduce the need for manual lot attendants, 
-it simultaneously opens avenues for new tech-related roles in installation, 
-maintenance, 
-and data analysis.
-The project also enhances public safety by reducing the chances of illegal or hazardous parking and complies with evolving regulations around smart infrastructure and urban sustainability.
+From an environmental standpoint, the system has the potential to generate a meaningful positive impact. One of the most pressing urban challenges is unnecessary vehicle emissions from prolonged searches for parking, which not only waste fuel but also contribute to air pollution and greenhouse gas buildup. The system actively reduces these emissions by streamlining the process and helping drivers find parking more efficiently. Its low-energy hardware and efficient power usage mean it operates sustainably and minimally impacts the environment. In future iterations, further green considerations such as solar-powered modules or eco-friendly enclosures could enhance the project's sustainability profile even more.
+
+Socially, the system contributes to smarter and more livable cities by making a frustrating everyday task, finding a parking spot, more straightforward and predictable. This improvement in urban mobility reduces driver stress, increases satisfaction, and supports more harmonious traffic flow, particularly in densely populated or high-demand areas. Importantly, the system enhances accessibility by helping those with mobility challenges or disabilities find appropriate parking more easily, contributing to a more inclusive urban experience. While automation might reduce some roles traditionally filled by parking attendants, it also creates new opportunities in areas such as technology deployment, maintenance, and data management. These emerging roles align well with the growing demand for digital and infrastructure-focused careers and can contribute to local job creation.
+
+The system may also support public safety initiatives. Reducing chaotic or illegal parking practices and improving overall organization can help prevent accidents and make parking areas safer for both drivers and pedestrians. Additionally, it aligns with the broader movement toward smart infrastructure that supports real-time responsiveness, data-driven planning, and environmental responsibility. As cities evolve, systems like this serve as building blocks for more connected, efficient, and sustainable urban environments.
+
 
 \section{Computer Vision/Society}
 
@@ -499,11 +470,11 @@ These vision-based systems are foundational to the development of smart cities,
 enabling a range of applications from traffic management and surveillance to public service automation. 
 By offering real-time visual interpretation, 
 machine vision equips autonomous systems with the capability to interact meaningfully with dynamic environments. 
-This capability enhances the efficiency, 
+This capability enhances urban operations' efficiency, 
 sustainability, 
-and safety of urban operations, 
+and safety, 
 creating more responsive and adaptive cities. 
-The integration of these systems into daily infrastructure allows for continuous monitoring and intelligent decision-making, 
+Integrating these systems into daily infrastructure allows for continuous monitoring and intelligent decision-making, 
 ultimately improving the quality of urban life.
 
 Recent technological advances have made it possible to implement vision-based object detection and tracking using efficient and lightweight methods. 
@@ -512,7 +483,7 @@ techniques that utilize frame differencing,
 adaptive thresholding, 
 and computationally simple tracking algorithms have been shown to detect moving objects in real time with minimal resource requirements, 
 as discussed in \cite{wang_and_zhang}. 
-These approaches are particularly valuable in settings where hardware limitations or cost constraints are a concern, 
+These approaches are particularly valuable in settings when hardware limitations or cost constraints are a concern, 
 offering affordable yet effective alternatives to more complex and hardware-intensive systems. 
 In parallel, 
 deep learning methods, 
@@ -521,7 +492,7 @@ have greatly improved the accuracy and responsiveness of object detection system
 Models like YOLO exemplify this progress by achieving a balance between inference speed and detection accuracy, allowing real-time application in a range of real-world scenarios.
 
 One domain where these technologies have had a pronounced impact is in urban mobility, 
-especially through the deployment of smart parking systems. 
+primarily by deploying smart parking systems. 
 The study presented in \cite{smart_parking} 
 illustrates how machine vision can be employed to identify and classify parking spaces, 
 thereby reducing traffic congestion, 
@@ -533,22 +504,22 @@ reduce driver frustration,
 and facilitate more informed urban planning. 
 Automating this process also diminishes the reliance on human labor and surveillance, 
 helping cities manage increasing transportation demands without incurring proportional operational costs. 
-The ability to collect and analyze real-time data further allows city planners and policymakers to make data-driven decisions that enhance infrastructure planning and resource allocation.
+Collecting and analyzing real-time data further allows city planners and policymakers to make data-driven decisions that enhance infrastructure planning and resource allocation.
 
 However, 
-the integration of machine vision into public spaces also introduces a range of ethical challenges, 
+integrating machine vision into public spaces also introduces a range of ethical challenges, 
 particularly related to privacy, 
 consent, 
 and data governance. 
 Surveillance systems that rely on visual data may inadvertently capture sensitive or personally identifiable information, 
-prompting concerns about individual rights and data protection. 
+prompting individual rights and data protection concerns. 
 While traditional surveillance often depends on biometric recognition, 
 modern machine vision systems, 
 such as those employing YOLO-based detection, 
 can be configured to focus solely on non-personal elements like objects or vehicles. 
 This approach offers a partial solution to privacy issues, 
 but it is not sufficient on its own. 
-Ethical deployment of such systems requires a framework that incorporates privacy by design, 
+Ethical deployment of such systems requires a framework incorporating privacy by design, 
 transparency in data usage, 
 and clear accountability for misuse or data breaches. 
 Ensuring community trust and stakeholder involvement in the planning and implementation phases is essential for sustainable adoption.
@@ -567,9 +538,9 @@ In educational environments,
 robotics systems equipped with perception capabilities can support personalized learning experiences, 
 provide interactive content, 
 and engage students in novel ways. 
-These applications reflect a broader trend of using robotics not merely as tools of automation but as collaborative agents that address specific societal needs, especially in underserved communities.
+These applications reflect a broader trend of using robotics as automation tools and collaborative agents that address specific societal needs, especially in underserved communities.
 
-Another critical area of advancement is the integration of computer vision with IoT in transportation systems, 
+Another critical area of advancement is integrating computer vision with IoT in transportation systems, 
 which has proven especially valuable in rapidly growing regions such as Southeast Asia. 
 These areas often face acute challenges due to increasing urbanization, 
 vehicle density, 
@@ -580,7 +551,7 @@ cars,
 cows, 
 dogs, 
 and pedestrians, 
-in both urban and rural settings. 
+in urban and rural settings. 
 Enhancing this framework, 
 an IoT-based alert system for pothole detection utilizes GPS data and cloud-based messaging to inform drivers of road hazards, 
 a critical feature during monsoon seasons when visibility is often compromised. 
@@ -594,7 +565,7 @@ This shift raises fundamental questions about the governance of these technologi
 including who is responsible for their oversight, 
 how inclusive their benefits are, 
 and how equitably they are deployed. 
-The continued success of robotics in urban infrastructure depends not only on technical advancements but also on how well these systems align with public values, 
+The continued success of robotics in urban infrastructure depends on technical advancements and how well these systems align with public values, 
 ethical norms, 
 and regulatory frameworks. 
 Societal acceptance and the long-term sustainability of these technologies require transparent development practices, 
@@ -603,48 +574,39 @@ and community engagement.
 
 In this evolving context, 
 even comparatively low-cost systems such as YOLO-based parking detection provide critical insight into the opportunities and limitations of integrating robotics into public environments. 
-These systems exemplify how intelligent technologies can be deployed effectively without requiring prohibitively expensive resources, 
-making them accessible to a wider array of municipalities and institutions. 
-By studying the deployment, 
+These systems exemplify how intelligent technologies can be deployed effectively without prohibitively expensive resources, 
+making them accessible to a broader array of municipalities and institutions. 
+Researchers and policymakers can derive valuable lessons that inform future applications by studying such technologies' deployment, 
 functionality, 
-and societal impact of such technologies, 
-researchers and policymakers can derive valuable lessons that inform future applications. 
-These include considerations around privacy, 
-data integrity, 
-user experience, 
-and system resilience. 
+and societal impact. 
 Ultimately, 
-the thoughtful integration of machine vision into public infrastructure holds the promise of not only enhancing operational efficiency but also fostering more equitable, 
+the thoughtful integration of machine vision into public infrastructure promises to enhance operational efficiency and foster more equitable, 
 inclusive, 
 and responsive urban environments.
 
-
-
 \section{Conclusion}
 
-The project envisions a highly scalable and adaptable system capable of being deployed in a wide range of environments, 
+The project envisions a highly scalable and adaptable system capable deployed in various environments, 
 including shopping malls, 
 stadiums, 
 airports, 
 university campuses, 
 and densely populated urban centers. 
 Its modular design ensures seamless integration with existing infrastructure, 
-making it suitable for both small-scale and large-scale parking facilities. 
-By leveraging the portability and affordability of edge devices such as Raspberry Pi, 
-the system remains cost-effective while maintaining reliable performance. 
+making it suitable for small-scale and large-scale parking facilities. 
+The system remains cost-effective while maintaining reliable performance by leveraging the portability and affordability of edge devices such as Raspberry Pi.
 This flexibility opens opportunities for widespread adoption, 
 especially in developing regions or in contexts where large-scale infrastructure investments are not feasible.
 
-Looking ahead, 
-several enhancements are planned to increase the system's intelligence, 
+Several enhancements are planned to increase the system's intelligence, 
 responsiveness, 
 and utility. 
-These include integration with smart city frameworks to deliver real-time traffic and parking analytics, 
-aiding not only drivers but also city planners and municipal authorities \cite{smart_cities}. 
+These include integrating smart city frameworks to deliver real-time traffic and parking analytics, 
+aiding drivers, city planners, and municipal authorities \cite{smart_cities}. 
 Predictive modeling techniques using machine learning can be applied to forecast parking space availability based on historical usage patterns and live sensor inputs, 
 optimizing traffic flow and minimizing time spent searching for parking. 
 The architecture can also be extended into multi-camera or drone-assisted configurations, 
-enabling coverage of vast and dynamic environments such as open-air lots or event venues. 
+enabling coverage of vast, dynamic environments such as open-air lots or event venues. 
 Drones on predetermined flight paths could provide aerial perspectives, 
 increasing monitoring flexibility and responsiveness. 
 By combining state-of-the-art machine vision with user-centric design principles, 
@@ -656,8 +618,8 @@ The system can be further enhanced by integrating the Raspberry Pi with existing
 offering a highly cost-effective and non-invasive solution for upgrading current parking management systems. 
 This approach significantly reduces the need for expensive hardware installations and complex system overhauls, 
 making it a practical choice for a wide range of environments. 
-By connecting Raspberry Pi devices to cameras that are already in place, 
-the system can seamlessly leverage the video streams from these cameras to monitor parking space occupancy in real-time \cite{parking_space_management}. 
+By connecting Raspberry Pi devices to cameras already in place, 
+the system can seamlessly leverage the these cameras' video streams to monitor real-time parking space occupancy \cite{parking_space_management}. 
 This method not only ensures enhanced performance and affordability but also allows for easy scalability, 
 as it can be quickly deployed in both small-scale parking lots and large, 
 complex environments. 
