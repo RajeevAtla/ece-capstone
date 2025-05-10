@@ -112,78 +112,51 @@ paving the way for data-driven transportation solutions on and beyond university
 
 \subsection{Dataset Prep}
 
-A diverse and robust dataset will form the foundation of this project. 
-The dataset will include images of parking lot images of various occupancy levels. 
-Images will be sourced from public datasets \cite{dataset_images}, \cite{images_original} and proprietary captures using our camera to ensure relevance to the application. 
-The preprocessing phase will involve resizing, 
+The foundation of this project is a diverse and robust dataset comprising parking lot images with varying occupancy levels \cite{dataset_images}, 
+\cite{images_original}. 
+The dataset includes images collected from both public sources and proprietary captures using our camera system, 
+ensuring strong relevance to real-world conditions. 
+During preprocessing, 
+resizing, 
 normalization, 
-and augmentation to prepare the data for model training and ensure data quality and robustness. 
-These processes help simulate real-world scenarios and address potential image quality variations caused by environmental factors. 
-Annotation tools will meticulously label parking spaces as occupied or vacant. 
-Specific attention will be given to special categories like handicapped spots, 
-electric vehicle charging spaces, 
-and reserved parking areas, 
-ensuring the system’s utility across diverse user needs. 
-These steps will ensure the datasets’ quality and reliability for training, 
-setting the stage for robust model performance.
+and data augmentation techniques are applied to improve data quality and simulate various environmental scenarios such as lighting changes and occlusions. 
+Each image is carefully annotated to label parking spaces as occupied or vacant. 
+Special categories such as handicapped spots, 
+electric vehicle charging stations,
+and reserved parking spaces receive particular attention to enhance the system’s practical utility. 
+These steps result in a high-quality, 
+well-labeled dataset that supports effective model training and contributes significantly to the system’s accuracy and reliability.
 
 \subsection{ML Model}
 
-The project will leverage the YOLOv11 computer vision algorithm \cite{yolo11_ultralytics} to address the task of parking space detection. 
-Known for its accuracy and speed, 
-YOLO is well-suited for real-time applications.
-The model will undergo customization and fine-tuning to align with the unique challenges of parking detection, 
-such as variations in car sizes, 
+
+
+This project leverages the YOLOv11 (You Only Look Once) 
+computer vision algorithm \cite{yolo11_ultralytics} 
+to address the task of parking space detection. 
+Known for its speed and accuracy, 
+YOLOv11 is well-suited for real-time applications, 
+especially on resource-constrained platforms. 
+The model undergoes customization and fine-tuning to tackle the specific challenges of parking detection, 
+including variations in vehicle size, 
 overlapping boundaries, 
-and partial occlusions caused by objects or shadows. 
-By implementing advanced image processing techniques, 
-the system will accurately identify parking spaces and determine whether they are vacant or occupied, 
-even under diverse weather conditions and potential image quality disruptions. 
-Training will focus on optimizing detection accuracy while minimizing computational demands to ensure seamless integration into low-power devices like the Raspberry Pi. 
-Techniques like quantization and pruning will reduce model complexity without compromising performance. 
-Rigorous testing and validation will ensure the model’s robustness across different environments, 
-meeting the necessary standards for real-time operation. 
-As previously mentioned, 
-the datasets gathered in the data acquisition phase will be used to evaluate and refine the machine learning algorithm, 
-improving its overall functionality and accuracy.
+and partial occlusions from objects or shadows. 
+Advanced image processing techniques are integrated to maintain detection reliability under diverse weather conditions and inconsistent image quality. 
+Training focuses on maximizing accuracy while reducing computational load to enable smooth operation on low-power devices like the Raspberry Pi. 
+Techniques such as quantization and pruning help reduce model complexity without sacrificing performance. 
+Rigorous testing and validation ensure the model performs robustly across a range of environments. 
+The annotated datasets developed earlier in the project are used to evaluate and refine the model, 
+improving its real-time accuracy and effectiveness.
 
 \subsection{Hardware}
-Selecting a suitable Raspberry Pi and camera module will be critical to the project’s success. 
-We need hardware that maintains stability 
-(no outages/connection issues) 
-and quality so the model runs smoothly. 
-We will have a mounting system to maintain minimal movement so the resulting images are consistent. 
-The testing phase will evaluate multiple aspects of the system, 
-including stability and quality, 
-and model detection accuracy across diverse parking lot layouts. 
-Extensive field testing will help refine the integration and optimize the system for practical deployment. 
-Suppose the Raspberry Pi system cannot run the machine learning model. 
-In that case, 
-we will pivot to running the model on an external computer and sending images from the camera to the computer. 
-In this case, 
-the Raspberry Pi will be used to connect via Wi-Fi or ethernet.
+
+Selecting the Raspberry Pi 5 and a compatible camera module plays a key role in the success of this project. The Raspberry Pi 5 provides the necessary processing power and connectivity to support smooth, stable operation of the machine learning model without outages or connection issues. A secure mounting system ensures the camera remains in a fixed position, producing consistent image captures critical for accurate detection. The testing phase evaluates the system’s hardware stability, image quality, and model performance across a variety of parking lot layouts. Extensive field testing helps fine-tune the integration and optimize the system for real-world deployment. In cases where the Raspberry Pi 5 cannot handle full model inference locally due to computational limits, the system is configured to offload processing to an external computer. In such setups, the Raspberry Pi 5 transmits images over Wi-Fi or Ethernet, maintaining its role as the edge capture and communication device.
 
 \subsection{Software}
-The software component will integrate advanced image processing, 
-machine learning, 
-and user-facing functionalities. 
-Captured images will undergo preprocessing steps such as noise reduction, 
-color correction, 
-and enhancement to ensure the highest possible input quality for the trained model. 
-The inference pipeline will leverage the trained model to identify and classify real-time parking spaces, 
-offering high accuracy and speed. 
-A robust data transmission protocol, 
-such as Wi-Fi or cellular communication, 
-will facilitate seamless information sharing with a central server or directly with a mobile application. 
-The mobile application will serve as the primary interface for end-users, 
-providing real-time parking availability information through interactive maps, 
-search functionality, 
-and real-time notifications. 
-Empty parking spaces will be highlighted on the interactive map for a given parking lot so that the user will receive this information. 
-Using the machine learning algorithm and the data gathered from the camera, 
-we can feed this into the backend of the mobile app function and apply a front-end user interface that connects with this information. 
-Emphasis will be placed on designing a user-friendly experience that accommodates various devices and user preferences, 
-ensuring wide adoption and usability.
+The software component of the system integrates advanced image processing, machine learning, and user-facing features to deliver a complete parking detection solution. Captured images are first processed through steps such as noise reduction, color correction, and enhancement to ensure high-quality inputs for the trained model. The inference pipeline uses the YOLOv11 model to detect and classify parking spaces in real time with high accuracy and low latency. Data transmission is handled through reliable communication protocols such as Wi-Fi or cellular networks, enabling seamless integration with either a central server or a mobile application.
+
+The web application functions as the primary interface for users, displaying real-time parking availability through interactive maps, search tools, and live notifications. Available parking spots are clearly highlighted, helping users quickly identify open spaces in specific lots. The processed outputs from the machine learning model are sent to the app’s backend, which then updates the front-end user interface with up-to-date parking status. Special attention is given to creating an intuitive and responsive design that works across a range of devices and user preferences, ensuring the system is accessible and practical for everyday use.
+
 
 \section{Challenges}
 Throughout the development of our project, 
@@ -352,7 +325,7 @@ demonstrating that the model achieved its optimal performance without unnecessar
 Figure \ref{fig:fig3} presents the evolution of the four evaluation metrics: 
 Precision (P), 
 Recall (R), 
-mAP50, 
+mAP50 (Mean Average Precision), 
 and mAP50-95. 
 As shown, 
 the values of all four metrics consistently increase over the course of training, 
@@ -366,7 +339,7 @@ suggesting that the model is becoming better at identifying all instances of obj
 Both mean average precision (mAP)
 metrics demonstrate a similar upward trend, 
 with mAP50 finishing at about 0.90 and mAP50-95 concluding at 0.72. 
-These scores indicate improvements in the model's accuracy across different levels of detection difficulty and at various IoU thresholds.
+These scores indicate improvements in the model's accuracy across different levels of detection difficulty and at various IoU thresholds \cite{yolo11_ultralytics}.
 
 The occasional spikes in the evaluation metrics are consistent with the fine-tuning process, 
 as observed in the training and validation loss plots. 
@@ -394,6 +367,19 @@ indicating that the model is refining its detection capabilities and performing 
     }
     \label{fig:fig3}
 \end{figure}
+
+Figures 1, 
+2, 
+and 3 showcase the quantitative performance data of the machine learning model and provide valuable insights into its effectiveness and efficiency. 
+By examining these plots, 
+we can assess how the model's performance evolves over time, 
+identify potential weaknesses or areas for improvement, 
+and determine its ability to generalize to unseen data. 
+Additionally, 
+the plots reveal trends in the model's learning process, 
+such as whether it is overfitting or underfitting. 
+These quantitative metrics are essential for validating the model’s utility in real-world applications and guiding further refinement, 
+ensuring that the model meets the desired standards for accuracy and reliability in tasks like parking space detection or any other specific objectives.
 
 
 \subsection{Test Examples}
@@ -442,6 +428,18 @@ This approach will improve the system's overall accuracy and ensure more reliabl
     }
     \label{fig:fig5}
 \end{figure}
+
+Figures 4 and 5 are examples of qualitative data, 
+which refers to non-numeric information that describes the characteristics or qualities of an object, 
+phenomenon, 
+or system. 
+It can encompass user experiences or feedback regarding the ease of navigation within the parking lot, 
+the availability of parking spaces during peak hours, 
+or the overall safety and accessibility of the facility. 
+Qualitative data is often subjective and focuses on the attributes or features that can't be easily quantified but provide essential insights for improving the user experience, 
+operational efficiency, 
+and service quality. 
+Figure 5 provides a visual example of the model working and finding open and closed parking spaces.
 
 \section{Cost/Sustainability analysis}
 
@@ -496,81 +494,131 @@ The project also enhances public safety by reducing the chances of illegal or ha
 
 \section{Computer Vision/Society}
 
-[3] https://ieeexplore.ieee.org/document/10332925
+The widespread adoption of machine vision technologies has transformed the landscape of urban infrastructure, placing robotics at the heart of contemporary societal innovation. 
+These vision-based systems are foundational to the development of smart cities, 
+enabling a range of applications from traffic management and surveillance to public service automation. 
+By offering real-time visual interpretation, 
+machine vision equips autonomous systems with the capability to interact meaningfully with dynamic environments. 
+This capability enhances the efficiency, 
+sustainability, 
+and safety of urban operations, 
+creating more responsive and adaptive cities. 
+The integration of these systems into daily infrastructure allows for continuous monitoring and intelligent decision-making, 
+ultimately improving the quality of urban life.
 
-The spread of machine vision technologies has revolutionized urban infrastructure, 
-positioning robotics at the forefront of societal innovation. 
-These vision-based systems are integral to smart cities, 
-driving automation in critical areas such as traffic management, 
-security, 
-and public services. 
-By enabling real-time visual interpretation, 
-these systems empower autonomous agents that improve urban life through enhanced efficiency, 
-sustainability, and safety.
-
-Recent advancements have shown that efficient, 
-low-resource methods can now achieve vision-based object detection and tracking. 
-An object-tracking approach utilizing frame-differencing, 
+Recent technological advances have made it possible to implement vision-based object detection and tracking using efficient and lightweight methods. 
+For instance, 
+techniques that utilize frame differencing, 
 adaptive thresholding, 
-and tracking algorithms, 
-which enables real-time detection of moving objects with minimal computational overhead, 
-was demonstrated \cite{wang_and_zhang}. 
-Such techniques offer an affordable alternative to traditional hardware-intensive solutions, 
-making intelligent automation more accessible to a broader range of applications. 
-Concurrently, 
-deep learning-based object detection systems, 
-such as YOLO, 
-have significantly advanced the capabilities of machine vision by balancing inference accuracy with computational efficiency, 
-allowing real-time detection in everyday environments.
+and computationally simple tracking algorithms have been shown to detect moving objects in real time with minimal resource requirements, 
+as discussed in \cite{wang_and_zhang}. 
+These approaches are particularly valuable in settings where hardware limitations or cost constraints are a concern, 
+offering affordable yet effective alternatives to more complex and hardware-intensive systems. 
+In parallel, 
+deep learning methods, 
+particularly those based on convolutional neural networks, 
+have greatly improved the accuracy and responsiveness of object detection systems. 
+Models like YOLO exemplify this progress by achieving a balance between inference speed and detection accuracy, allowing real-time application in a range of real-world scenarios.
 
-In the context of urban mobility, 
-these advancements have been especially impactful in the development of smart parking systems. 
-The work in \cite{smart_parking} illustrates how machine vision can optimize parking space identification and classification, 
-alleviating traffic congestion and maximizing space utilization in urban centers. 
-Such systems can provide immediate, 
-data-driven insights, 
-improving user experience and urban planning. 
-Automating routine tasks like parking identification reduces reliance on human labor and contributes to better traffic flow, 
-environmental sustainability, 
-and a more responsive urban environment.
+One domain where these technologies have had a pronounced impact is in urban mobility, 
+especially through the deployment of smart parking systems. 
+The study presented in \cite{smart_parking} 
+illustrates how machine vision can be employed to identify and classify parking spaces, 
+thereby reducing traffic congestion, 
+lowering emissions from idling vehicles, 
+and improving the overall efficiency of urban space utilization. 
+By continuously monitoring parking availability and conveying that information to users, 
+such systems streamline parking behavior, 
+reduce driver frustration, 
+and facilitate more informed urban planning. 
+Automating this process also diminishes the reliance on human labor and surveillance, 
+helping cities manage increasing transportation demands without incurring proportional operational costs. 
+The ability to collect and analyze real-time data further allows city planners and policymakers to make data-driven decisions that enhance infrastructure planning and resource allocation.
 
-Nevertheless, 
-the widespread deployment of machine vision systems raises critical ethical concerns. 
-Vision-based surveillance technologies, 
-particularly in public spaces, 
-present privacy, 
+However, 
+the integration of machine vision into public spaces also introduces a range of ethical challenges, 
+particularly related to privacy, 
 consent, 
-and data security challenges. 
-Unlike traditional surveillance systems, 
-which often rely on biometric data, 
-modern implementations like YOLO-based systems can focus solely on objects rather than individuals, 
-offering a potential solution to privacy concerns. 
-Despite this, 
-future deployments must ensure privacy by design and transparency in how data is processed and used to maintain public trust and accountability.
+and data governance. 
+Surveillance systems that rely on visual data may inadvertently capture sensitive or personally identifiable information, 
+prompting concerns about individual rights and data protection. 
+While traditional surveillance often depends on biometric recognition, 
+modern machine vision systems, 
+such as those employing YOLO-based detection, 
+can be configured to focus solely on non-personal elements like objects or vehicles. 
+This approach offers a partial solution to privacy issues, 
+but it is not sufficient on its own. 
+Ethical deployment of such systems requires a framework that incorporates privacy by design, 
+transparency in data usage, 
+and clear accountability for misuse or data breaches. 
+Ensuring community trust and stakeholder involvement in the planning and implementation phases is essential for sustainable adoption.
 
-Beyond urban mobility, 
-integrating robotics into broader societal functions reflects a paradigm shift in public services. 
-As \cite{social_robotics} highlights, 
-advances in social robotics show how robotic systems can enhance educational and medical services, 
-particularly in pediatric and healthcare settings. 
-Robots can assist in personalized learning, 
-therapeutic activities, 
-and medical monitoring by applying similar vision-based technologies. 
-These advancements highlight the growing potential of robotics to serve not just as tools for automation but as agents of positive social change, 
-addressing gaps in critical areas like education and healthcare while reinforcing the need for ethical considerations in their design and deployment.
+The role of robotics in public service extends beyond transportation and surveillance into fields such as healthcare, 
+education, 
+and environmental monitoring. 
+As \cite{social_robotics} discusses, 
+the evolution of social robotics demonstrates how these systems can contribute meaningfully to human-centered services. 
+In healthcare settings, 
+vision-enabled robots can assist in patient monitoring, 
+therapeutic interventions, 
+and routine administrative tasks, 
+easing the burden on medical professionals and improving patient outcomes. 
+In educational environments, 
+robotics systems equipped with perception capabilities can support personalized learning experiences, 
+provide interactive content, 
+and engage students in novel ways. 
+These applications reflect a broader trend of using robotics not merely as tools of automation but as collaborative agents that address specific societal needs, especially in underserved communities.
 
-The integration of robotic perception into civic infrastructure signals a shift in the relationship between technology and society. 
-These systems highlight the growing role of automation in providing public services, 
-raising important questions about responsibility, 
-inclusivity, 
-and governance in their design and deployment. 
-As machine vision and robotics continue to evolve, 
-their potential to reshape urban environments will depend on technical capabilities and their alignment with societal values and priorities.
+Another critical area of advancement is the integration of computer vision with IoT in transportation systems, 
+which has proven especially valuable in rapidly growing regions such as Southeast Asia. 
+These areas often face acute challenges due to increasing urbanization, 
+vehicle density, 
+and inconsistent infrastructure quality. 
+As detailed in \cite{real_time_transport}, 
+a robust object detection framework using YOLOv4 can reliably identify various traffic-related entities such as bikes, 
+cars, 
+cows, 
+dogs, 
+and pedestrians, 
+in both urban and rural settings. 
+Enhancing this framework, 
+an IoT-based alert system for pothole detection utilizes GPS data and cloud-based messaging to inform drivers of road hazards, 
+a critical feature during monsoon seasons when visibility is often compromised. 
+Together, 
+these components form a cohesive and scalable solution for intelligent transportation management, 
+offering tangible improvements in commuter safety and operational efficiency.
 
-In this evolving landscape, 
-even low-cost systems like YOLO-based parking detection provide valuable insights into how vision-enabled robotics can be deployed for the public good. 
-By examining their practical limitations and benefits, 
-such systems offer important lessons in integrating intelligent technologies into public infrastructure while addressing ethical concerns and improving urban living conditions.
+The increasing incorporation of robotic perception into civic systems reflects a significant transformation in how societies view technology. 
+It marks a shift from seeing automation solely as a means of industrial efficiency to recognizing its role in supporting social infrastructure. 
+This shift raises fundamental questions about the governance of these technologies, 
+including who is responsible for their oversight, 
+how inclusive their benefits are, 
+and how equitably they are deployed. 
+The continued success of robotics in urban infrastructure depends not only on technical advancements but also on how well these systems align with public values, 
+ethical norms, 
+and regulatory frameworks. 
+Societal acceptance and the long-term sustainability of these technologies require transparent development practices, 
+inclusive design, 
+and community engagement.
+
+In this evolving context, 
+even comparatively low-cost systems such as YOLO-based parking detection provide critical insight into the opportunities and limitations of integrating robotics into public environments. 
+These systems exemplify how intelligent technologies can be deployed effectively without requiring prohibitively expensive resources, 
+making them accessible to a wider array of municipalities and institutions. 
+By studying the deployment, 
+functionality, 
+and societal impact of such technologies, 
+researchers and policymakers can derive valuable lessons that inform future applications. 
+These include considerations around privacy, 
+data integrity, 
+user experience, 
+and system resilience. 
+Ultimately, 
+the thoughtful integration of machine vision into public infrastructure holds the promise of not only enhancing operational efficiency but also fostering more equitable, 
+inclusive, 
+and responsive urban environments.
+
+
 
 \section{Conclusion}
 
@@ -592,7 +640,7 @@ several enhancements are planned to increase the system's intelligence,
 responsiveness, 
 and utility. 
 These include integration with smart city frameworks to deliver real-time traffic and parking analytics, 
-aiding not only drivers but also city planners and municipal authorities. 
+aiding not only drivers but also city planners and municipal authorities \cite{smart_cities}. 
 Predictive modeling techniques using machine learning can be applied to forecast parking space availability based on historical usage patterns and live sensor inputs, 
 optimizing traffic flow and minimizing time spent searching for parking. 
 The architecture can also be extended into multi-camera or drone-assisted configurations, 
@@ -603,6 +651,21 @@ By combining state-of-the-art machine vision with user-centric design principles
 this system presents a forward-thinking, 
 practical solution to the persistent challenges of urban parking, 
 paving the way for smarter, more efficient cities.
+
+The system can be further enhanced by integrating the Raspberry Pi with existing security camera infrastructures, 
+offering a highly cost-effective and non-invasive solution for upgrading current parking management systems. 
+This approach significantly reduces the need for expensive hardware installations and complex system overhauls, 
+making it a practical choice for a wide range of environments. 
+By connecting Raspberry Pi devices to cameras that are already in place, 
+the system can seamlessly leverage the video streams from these cameras to monitor parking space occupancy in real-time \cite{parking_space_management}. 
+This method not only ensures enhanced performance and affordability but also allows for easy scalability, 
+as it can be quickly deployed in both small-scale parking lots and large, 
+complex environments. 
+By transforming existing security infrastructure into smart, 
+responsive parking management systems, 
+this solution maximizes the utility of current resources while providing a robust, 
+efficient, 
+and flexible tool for modern urban parking challenges.
 
 \section{References}
 
