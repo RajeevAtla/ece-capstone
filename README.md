@@ -10,6 +10,8 @@ This repository covers the ML training/inference pipeline, PostgreSQL backend, a
 Flask/FastAPI frontends used for the prototype. Intended deployment uses a Raspberry Pi 5
 and camera; development often uses recorded video as a camera stand-in.
 
+**Final report:** [Final Report/final_report.pdf](Final%20Report/final_report.pdf)
+
 ## What It Does
 
 - Fine-tunes YOLOv11 to classify parking regions as `car` (occupied) or `empty`
