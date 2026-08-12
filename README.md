@@ -165,14 +165,3 @@ Classes: `0 = car`, `1 = empty`. Training artifacts live under `ML Model/runs/` 
 - mAP50-95 ≈ 0.72
 
 Loss curves plateau around 750–800 epochs (~0.6).
-
-## Current Limitations
-
-- Full Raspberry Pi + fixed-camera field deployment was limited by hardware lead times and
-  campus/state restrictions on drones / elevated mounts
-- Phone/video capture was used as a stand-in for the intended Pi camera stream
-- Distant spots are harder to detect with a single camera; multi-camera coverage is needed
-  for large lots
-- DB refresh was tuned toward ~30s (faster 5–10s updates caused locking/stability issues)
-- Flask and FastAPI modules currently use different hardcoded DB credentials
-- Automated API tests (`test_parking_api.py`) are out of date relative to the current schema
